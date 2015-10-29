@@ -12,18 +12,41 @@
 <?php
 
 // Set up the content width value based on the theme's design and stylesheet.
-if ( ! isset( $content_width ) )
-	$content_width = 993;
-
+if ( ! isset( $content_width ) ) {
+    $content_width = 993;
+}
 /* HEAD */
 
-//add /js/menu.js to the <head> catering for its dependancy on jQuery
+remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+//remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+//remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+//remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+//remove_action( 'wp_head', 'index_rel_link' ); // index link
+//remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
+//remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
+//remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
+//remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+
+/**
+ * Add relevant stylesheets and scripts within <head> tags
+ */
 function pweb_scripts() {
-	wp_enqueue_script(
-		'pweb_menu',
-		get_stylesheet_directory_uri() . '/js/menu.js',
-		array( 'jquery' )
-	);
+    wp_register_style('normalize', get_stylesheet_directory_uri().'/css/normalize.css');
+    wp_enqueue_style(
+        'foundation', 
+        get_stylesheet_directory_uri().'/css/foundation.min.css',
+        array( 'normalize' )
+    );
+    wp_enqueue_style(
+        'properframework', 
+        get_stylesheet_directory_uri().'/style.css'
+    );
+    //add /js/menu.js to the <head> catering for its dependancy on jQuery
+    wp_enqueue_script(
+        'pweb_menu',
+        get_stylesheet_directory_uri() . '/js/menu.js',
+        array( 'jquery' )
+    );
 }
 
 add_action( 'wp_enqueue_scripts', 'pweb_scripts' );
@@ -32,7 +55,9 @@ add_action( 'wp_enqueue_scripts', 'pweb_scripts' );
 
 /*** Menu ***/
 
-//register primary menu of the theme
+/**
+ * Register primary menu of the theme
+ */
 register_nav_menus( 
 	array('primary' => __('Above the content'))	//theme location
 );
@@ -174,57 +199,57 @@ add_filter('single_template', create_function(
 add_action( 'widgets_init', 'pweb_theme_widgets_init' );
 
 function pweb_theme_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => __( 'Header', 'properweb' ),
-			'id'            => 'header_sidebar',
-			'description'   => __('Widget area at the top of the home page.'),
-			'class'         => 'header',
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '',
-			'after_title'   => '' 
-		)
-	);
+    register_sidebar(
+        array(
+            'name'          => __( 'Header', 'properweb' ),
+            'id'            => 'header_sidebar',
+            'description'   => __('Widget area at the top of the home page.'),
+            'class'         => 'header',
+            'before_widget' => '',
+            'after_widget'  => '',
+            'before_title'  => '',
+            'after_title'   => '' 
+        )
+    );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Footer', 'properweb' ),
-			'id'            => 'footer_sidebar',
-			'description'   => __('Widget area in the footer.'),
-			'class'         => 'footer',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>' 
-		)
-	);
+    register_sidebar(
+        array(
+            'name'          => __( 'Footer', 'properweb' ),
+            'id'            => 'footer_sidebar',
+            'description'   => __('Widget area in the footer.'),
+            'class'         => 'footer',
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>' 
+        )
+    );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Page Aside', 'properweb' ),
-			'id'            => 'page_aside_sidebar',
-			'description'   => __('Page side widget area.'),
-			'class'         => 'aside',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>' 
-		)
-	);
+    register_sidebar(
+        array(
+            'name'          => __( 'Page Aside', 'properweb' ),
+            'id'            => 'page_aside_sidebar',
+            'description'   => __('Page side widget area.'),
+            'class'         => 'aside',
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>' 
+        )
+    );
 
-	register_sidebar(
-		array(
-			'name'          => __( 'Post Aside', 'properweb' ),
-			'id'            => 'post_aside_sidebar',
-			'description'   => __('Post side widget area.'),
-			'class'         => 'aside',
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>' 
-		)
-	);
+    register_sidebar(
+        array(
+            'name'          => __( 'Post Aside', 'properweb' ),
+            'id'            => 'post_aside_sidebar',
+            'description'   => __('Post side widget area.'),
+            'class'         => 'aside',
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>' 
+        )
+    );
 }
 
 //featured image
