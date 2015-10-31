@@ -13,10 +13,10 @@
 
 // Set up the content width value based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) ) {
-    $content_width = 993;
+    $content_width = 1000;
 }
-/* HEAD */
-
+/* <HEAD> */
+// Clean up <head> tags of unnnesesary links
 remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
 remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
 remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
@@ -32,89 +32,29 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-/**
- * Add relevant stylesheets and scripts within <head> tags
- */
-function pweb_scripts() {
-    wp_register_style('normalize', get_stylesheet_directory_uri().'/css/normalize.css');
-    wp_enqueue_style(
-        'foundation', 
-        get_stylesheet_directory_uri().'/css/foundation.min.css',
-        array( 'normalize' )
-    );
-    wp_enqueue_style(
-        'app', 
-        get_stylesheet_directory_uri().'/css/app.css',
-        array( 'normalize' )
-    );
-    wp_enqueue_style(
-        'properframework', 
-        get_stylesheet_directory_uri().'/style.css',
-        array( 'normalize' )
-    );
-    wp_enqueue_script(
-        'modernizr',
-        get_stylesheet_directory_uri() . '/js/vendor/modernizr.js'
-    );    
-    //add /js/menu.js to the <head> catering for its dependancy on jQuery
-//    wp_enqueue_script(
-//        'pweb_menu',
-//        get_stylesheet_directory_uri() . '/js/menu.js',
-//        array( 'jquery' )
-//    );
-}
+// Add relevant stylesheets and scripts within <head> tags (register scripts and stylesheets)
+require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
-add_action( 'wp_enqueue_scripts', 'pweb_scripts' );
+// Add menu compatible with 'foundation' framework
+require_once(get_template_directory().'/functions/menu.php'); 
 
-/* HEADER */
+// Register new custom fields in Settings > General
+require_once(get_template_directory().'/functions/admin.php'); 
 
-/*** Menu ***/
+// Register sidebars/widget areas
+require_once(get_template_directory().'/functions/sidebars.php'); 
 
-/**
- * Register primary menu of the theme
- */
-register_nav_menus( 
-	array('primary' => __('Above the content'))	//theme location
-);
+// Customize Guest Book (Comments)
+require_once(get_template_directory().'/functions/gbook.php'); 
 
-//add a parent class for menu item
-add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
+// Add support for meta tags (custom fields)
+require_once(get_template_directory().'/functions/meta.php'); 
 
-function add_menu_parent_class( $items ) {
-	
-    $parents = array();
-    foreach ( $items as $item ) {
-        if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-            $parents[] = $item->menu_item_parent;
-        }
-    }
+// Customize login page
+require_once(get_template_directory().'/functions/login.php'); 
 
-    foreach ( $items as $item ) {
-        if ( in_array( $item->ID, $parents ) ) {
-            $item->classes[] = 'has-dropdown'; //class required by 'foundation'
-        }
-    }
-
-    return $items;    
-}
-
-// add custom class to submenu (required for 'foundation')
-add_filter('wp_nav_menu','change_submenu_class'); 
-
-function change_submenu_class($menu) {  
-  $menu = preg_replace('/ class="sub-menu"/','/ class="sub-menu dropdown"/',$menu);  
-  return $menu;  
-}
-
-//add class for active/current menu item (required for 'foundation')
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-
-function special_nav_class($classes, $item){
-     if( in_array('current-menu-item', $classes) ){
-             $classes[] = 'active';
-     }
-     return $classes;
-}
+// Theme support (featured image)
+require_once(get_template_directory().'/functions/theme-support.php'); 
 
 /* SHORTCODES */
 
@@ -174,62 +114,6 @@ function pweb_promo( $atts, $content = null  ) {
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
 }
 
-
-/* ADMIN MENU */
-
-//register new custom field in Settings > General
-add_action('admin_init', 'pweb_general_section');  
-
-function pweb_general_section() {  
-    add_settings_section(  
-        'organization_section', // Section ID 
-        __('Organization/Business'), // Section Title
-        'pweb_section_options_callback', // Callback
-        'general' // What Page?  This makes the section show up on the General Settings Page
-    );
-
-    add_settings_field( 
-        'main_service_type', // Option ID
-        __('Main activity/service'), // Label
-        'pweb_organization_type_callback', // !important - This is where the args go!
-        'general', // Page it will be displayed (General Settings)
-        'organization_section', // Name of our section
-        array( // The $args
-            'main_service_type' // Should match Option ID
-        )  
-    ); 
-		
-		add_settings_field( 
-        'online_since_year', // Option ID
-        __('Online presence since (year)'), // Label
-        'pweb_online_since_year_callback', // !important - This is where the args go!
-        'general', // Page it will be displayed (General Settings)
-        'organization_section', // Name of our section
-        array( // The $args
-            'online_since_year' // Should match Option ID
-        )  
-    ); 
-
-    register_setting('general','main_service_type', 'esc_attr');
-		register_setting('general','online_since_year', 'esc_attr');
-}
-/*
-function pwrf_section_options_callback() { // Section Callback
-    echo '<p>A little message on editing info</p>';  
-}
-*/
-function pweb_organization_type_callback($args) {  // Textbox Callback
-    $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" class="regular-text" name="'. $args[0] .'" value="' . $option . '" />';
-		echo '<br><p><em>'; _e('The phrase will appear in the header'); echo '</em></p>';
-}
-
-function pweb_online_since_year_callback($args) {  // Textbox Callback
-    $option = get_option($args[0]);
-    echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-		echo '<br><p><em>'; _e('The year will appear in the footer'); echo '</em></p>';
-}
-
 /* BODY */
 
 //replace [...] in excerpt
@@ -247,201 +131,4 @@ add_filter('single_template', create_function(
 	return $the_template;' )
 );
 
-/*** Register widgetized areas ***/
-
-add_action( 'widgets_init', 'pweb_theme_widgets_init' );
-
-function pweb_theme_widgets_init() {
-    register_sidebar(
-        array(
-            'name'          => __( 'Header', 'properweb' ),
-            'id'            => 'header_sidebar',
-            'description'   => __('Widget area at the top of the home page.'),
-            'class'         => 'header',
-            'before_widget' => '',
-            'after_widget'  => '',
-            'before_title'  => '',
-            'after_title'   => '' 
-        )
-    );
-
-    register_sidebar(
-        array(
-            'name'          => __( 'Footer', 'properweb' ),
-            'id'            => 'footer_sidebar',
-            'description'   => __('Widget area in the footer.'),
-            'class'         => 'footer',
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>' 
-        )
-    );
-
-    register_sidebar(
-        array(
-            'name'          => __( 'Page Aside', 'properweb' ),
-            'id'            => 'page_aside_sidebar',
-            'description'   => __('Page side widget area.'),
-            'class'         => 'aside',
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>' 
-        )
-    );
-
-    register_sidebar(
-        array(
-            'name'          => __( 'Post Aside', 'properweb' ),
-            'id'            => 'post_aside_sidebar',
-            'description'   => __('Post side widget area.'),
-            'class'         => 'aside',
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<h3 class="widget-title">',
-            'after_title'   => '</h3>' 
-        )
-    );
-}
-
-//featured image
-add_theme_support( 'post-thumbnails', array( 'post' ) );
-add_image_size( 'post-featured-image', $content_width, 200, true ); // (hard-cropped)
-add_filter( 'image_size_names_choose', 'pweb_custom_sizes' );
-
-function pweb_custom_sizes( $sizes ) {
-    return array_merge( $sizes, array(
-        'pweb-custom-size' => __( 'Featured imaage size' ),
-    ) );
-}
 ?> 
-
-<?php 
-//custom gbook comment function
-function pwrf_gbook_comment ($comment, $args, $depth) {
-    $GLOBALS['comment'] = $comment; ?>
-    <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-            <div id="comment-<?php comment_ID(); ?>" class="comment-container">
-                <div class="comment-avatar">
-    <?php echo get_avatar( $comment->comment_author_email, 50 ); ?>
-            </div>
-                <div class="comment-text">
-                    <header class="comment-author">
-                        <span class="author"><?php printf(__('<cite>%s</cite>','wip'), get_comment_author()) ?></span><br>
-                        <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
-                                <?php 
-                                        printf(__('%1$s %2$s','wip'), get_comment_date(),  get_comment_time()); 
-                                ?>
-                                &nbsp;&nbsp;&nbsp;
-                                <?php
-                                        edit_comment_link(__('(Edit)','wip')); 
-                                ?>
-                        </time>
-                    </header>
-                    <?php if ($comment->comment_approved == '0') : ?>
-                             <br /><em><?php _e('Your comment is awaiting approval.','wip') ?></em>
-                    <?php endif; ?>
-
-                    <?php comment_text() ?>
-
-                </div>
-
-                <div class="clearfix"></div>
-            </div>
-<?php } ?>
-
-<?php
-/**
- * Registering meta boxes. "Meta box" plug-in has to be activated (https://wordpress.org/plugins/meta-box/).
- *
- * You also should read the changelog to know what has been changed before updating.
- *
- * For more information, please visit:
- * @link http://metabox.io/docs/registering-meta-boxes/
- */
-
-add_filter( 'rwmb_meta_boxes', 'pweb_register_meta_boxes' );
-
-function pweb_register_meta_boxes( $meta_boxes )
-{
-    /**
-     * prefix of meta keys (optional)
-     * Use underscore (_) at the beginning to make keys hidden
-     * Alt.: You also can make prefix empty to disable it
-     */
-    // Better has an underscore as last sign
-    $prefix = 'pweb_';
-
-    // 1st meta box
-    $meta_boxes[] = array(
-        // Meta box id, UNIQUE per meta box. Optional since 4.1.5
-        'id'         => 'meta_data',
-
-        // Meta box title - Will appear at the drag and drop handle bar. Required.
-        'title'      => __( 'Мета-теги', 'meta-box' ),
-
-        // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
-        'post_types' => array( 'post', 'page' ),
-
-        // Where the meta box appear: normal (default), advanced, side. Optional.
-        'context'    => 'normal',
-
-        // Order of meta box: high (default), low. Optional.
-        'priority'   => 'high',
-
-        // Auto save: true, false (default). Optional.
-        'autosave'   => true,
-
-        // List of meta fields
-        'fields'     => array(
-            // TEXT
-            array(
-                // Field name - Will be used as label
-                'name'  => __( 'Заголовок', 'meta-box' ),
-                // Field ID, i.e. the meta key
-                'id'    => "{$prefix}title",
-                // Field description (optional)
-                'desc'  => __( 'Tег "title". По умолчанию изпользуется заголовок статьи/страницы.', 'meta-box' ),
-                'type'  => 'text',
-                // CLONES: Add to make the field cloneable (i.e. have multiple value)
-                'clone' => false,
-                'size' => 60,
-            ),
-            // TEXTAREA
-            array(
-                'name' => __( 'Описание', 'meta-box' ),
-                'desc' => __( 'Мета-тег "description". Рекоммендуемая длина до 155 символов.', 'meta-box' ),
-                'id'   => "{$prefix}description",
-                'type' => 'textarea',
-                'cols' => 20,
-                'rows' => 3,
-            ),
-            // TEXTAREA
-            array(
-                'name' => __( 'Ключевые слова', 'meta-box' ),
-                'desc' => __( 'Мета-тег "keywords". Рекоммендуемая длина до 170 символов (5-10 слов).', 'meta-box' ),
-                'id'   => "{$prefix}keywords",
-                'type' => 'textarea',
-                'cols' => 20,
-                'rows' => 3,
-            ),
-        ),
-    );
-    return $meta_boxes;
-}
-?>
-<?php
-/* LOGIN FORM */
-//Customizing the Login Form: https://codex.wordpress.org/Customizing_the_Login_Form
-function pweb_login_logo() { ?>
-    <style type="text/css">
-        .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/crown.png) !important;
-            padding-bottom: 5px;
-        }
-    </style>
-<?php } 
-add_action( 'login_enqueue_scripts', 'pweb_login_logo' );
-
-?>
