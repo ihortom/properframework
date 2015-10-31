@@ -200,7 +200,6 @@ body {
 /***** CONTENT *****/
 #content {
     width: 100%;						/* link to footer */
-    _float: left;
     color: #000;
     margin-top: 2px;
     padding: 0;
@@ -241,7 +240,10 @@ body {
     background-color: #fff;
     border: 1px solid #98F205;
     overflow: hidden;
-    float: left;
+}
+
+.box-with-padding {
+    padding: 20px;
 }
 
 .full-width {
@@ -255,10 +257,6 @@ body {
 
 .no-pads {
     margin: -20px -21px -21px;
-}
-
-.mid-width {
-    width: 100%;
 }
 
 td, th {
@@ -277,12 +275,9 @@ th {
     padding: 2px;
 }
 
-
 #aside {
-    box-sizing: border-box;
-    width: 242px;
-    float: right;
-    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 #aside-sidebar {
@@ -853,8 +848,33 @@ input[type=submit] {
     #who { font-size: 4.0em; }
     #why { font-size: 1.7em; }
 }
-@media only screen and (min-width: 40.0625em) {}
+@media only screen and (min-width: 40.0625em) {
+    
+    #aside {
+        width: 250px;
+    }
+    
+    .article-with-sidebar,
+    #aside {
+        display: table-cell;
+        vertical-align: top;
+        margin-top: 0;
+    }
+
+    #aside.right-sidebar {
+        padding-left: 20px;
+    }
+    
+    #aside.left-sidebar {
+        padding-right: 20px;
+    }
+    
+    .row-with-sidebar {
+        display: table;
+        table-layout: fixed;
+    }
+}
 @media only screen and (min-width: 64.0625em) {
-    #wrap { width: 1000px; }
+    #wrap { width: 1000px; }  
 }
 @media only screen and (min-width: 90.0625em) {}
