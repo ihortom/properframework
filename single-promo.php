@@ -24,7 +24,7 @@
 		<div class="box mid-width er404">
 			<h2 class="title">No post</h2>
 			<h3>Sorry, this category contains no post yet.</h3>
-			<p>Content will be added later on.</p>
+			<p>Content will be added soon.</p>
 		</div>
 		
 	<?php endif; ?>

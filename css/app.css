@@ -57,6 +57,13 @@ and open the template in the editor.
     padding: 0;
 }
 
+ul.pagination li {
+    font-size: 1rem;
+}
+ul.pagination li a {
+    font-family: FontAwesome, Philosopher, sans-serif;
+    padding: 0.625em 1em;
+}
 @media only screen and (min-width: 40.0625em) {    
     .top-bar-section ul {
         display: block;

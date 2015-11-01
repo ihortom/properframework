@@ -56,6 +56,9 @@ require_once(get_template_directory().'/functions/login.php');
 // Theme support (featured image)
 require_once(get_template_directory().'/functions/theme-support.php'); 
 
+// Pagination compatible with 'foundation' markup
+require_once(get_template_directory().'/functions/pagination.php'); 
+
 /* SHORTCODES */
 
 /* CUSTOM
