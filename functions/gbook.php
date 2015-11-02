@@ -45,7 +45,7 @@
                         /** This filter is documented in wp-includes/comment-template.php */
                         do_action( 'comment_form', $post->ID );
                 ?>
-                <p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment'); ?>" />
+                <p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Message'); ?>" />
                 <?php comment_id_fields(); ?></p>
             </form>
 
@@ -94,5 +94,5 @@
         <?php endif; ?>
     </div><!-- #gbook -->
 <?php else : ?>
-    <p class="text-center">Comments are no enabled.</p>
+    <p class="text-center">Comments are not enabled.</p>
 <?php endif; ?>

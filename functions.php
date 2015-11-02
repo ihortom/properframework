@@ -15,22 +15,9 @@
 if ( ! isset( $content_width ) ) {
     $content_width = 1000;
 }
-/* <HEAD> */
-// Clean up <head> tags of unnnesesary links
-remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
-remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
-remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
-remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
-//remove_action( 'wp_head', 'index_rel_link' ); // index link
-//remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
-//remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
-//remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); // Display relational links for the posts adjacent to the current post.
-remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
-//remove emoji
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+// Removing all the junk from wordpress head we don't need.
+require_once(get_template_directory().'/functions/cleanup.php'); 
 
 // Add relevant stylesheets and scripts within <head> tags (register scripts and stylesheets)
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
@@ -58,8 +45,6 @@ require_once(get_template_directory().'/functions/pagination.php');
 
 /* SHORTCODES */
 
-/* CUSTOM */
-
 //create shortcode to make a separator of the new article within the page
 add_shortcode('gbook', 'pweb_gbook');
 //usage [gbook]
@@ -71,7 +56,7 @@ function pweb_gbook() {
 }
  /* 
 //create shortcode to make a separator of the new article within the page
-add_shortcode('royalfit', 'pwrf_royal_fit');
+add_shortcode('royalfit', 'properweb');
 //usage [royalfit]
 function pwrf_royal_fit() {
 	return '«<strong><em><span style="color: #ed008c;">Royal Fit</span></em></strong>»';
@@ -124,22 +109,5 @@ function pweb_promo( $atts, $content = null  ) {
     else $period = '';
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
 }
-
-/* BODY */
-
-//replace [...] in excerpt
-function pweb_excerpt_more( $more ) {
-	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">' . __('»»»', 'properweb') . '</a><br />';
-}
-add_filter('excerpt_more', 'pweb_excerpt_more');
-
-//gets post cat slug and looks for single-[cat slug].php and applies it
-add_filter('single_template', create_function(
-	'$the_template',
-	'foreach( (array) get_the_category() as $cat ) {
-		if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
-		return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
-	return $the_template;' )
-);
 
 ?> 
