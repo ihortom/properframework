@@ -12,7 +12,7 @@
  
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 	<?php if ( has_post_thumbnail() ) { 
-	
+                //featured image is to be used in the background
 		$featured_image_url = wp_get_attachment_url( get_post_thumbnail_id() ); } ?>	
 		<div class="box mid-width article">
 			<h2 class="title"><?php the_title(); ?></h2>

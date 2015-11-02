@@ -45,13 +45,6 @@ function pweb_scripts_and_styles() {
         get_stylesheet_directory_uri().'/style.css',
         array( 'normalize' )
     );
-   
-    //add /js/menu.js to the <head> catering for its dependancy on jQuery
-//    wp_enqueue_script(
-//        'pweb_menu',
-//        get_stylesheet_directory_uri() . '/js/menu.js',
-//        array( 'jquery' )
-//    );
 }
 
 ?>

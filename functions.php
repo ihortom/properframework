@@ -7,6 +7,7 @@
  * @since ProperFramework 1.0
  * @uses Meta Box: 'rwmb_meta_boxes' @see http://metabox.io/
  * @uses Single-Choice Post Taxonomy: 'pweb_post_type' @see ../../mu-plugins/pweb_single_choice_tax.php
+ * @uses Breadcrumb NavXT: 'bcn_display' @see http://mtekk.us/code/breadcrumb-navxt/
  */
 ?>
 <?php
