@@ -44,9 +44,6 @@ require_once(get_template_directory().'/functions/admin.php');
 // Register sidebars/widget areas
 require_once(get_template_directory().'/functions/sidebars.php'); 
 
-// Customize Guest Book (Comments)
-require_once(get_template_directory().'/functions/gbook.php'); 
-
 // Add support for meta tags (custom fields)
 require_once(get_template_directory().'/functions/meta.php'); 
 
@@ -61,7 +58,18 @@ require_once(get_template_directory().'/functions/pagination.php');
 
 /* SHORTCODES */
 
-/* CUSTOM
+/* CUSTOM */
+
+//create shortcode to make a separator of the new article within the page
+add_shortcode('gbook', 'pweb_gbook');
+//usage [gbook]
+function pweb_gbook() {	
+    ob_start();
+    include('functions/gbook.php');
+    $gbook = ob_get_clean(); //Get the buffer and erase it
+    return $gbook;
+}
+ /* 
 //create shortcode to make a separator of the new article within the page
 add_shortcode('royalfit', 'pwrf_royal_fit');
 //usage [royalfit]
