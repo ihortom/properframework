@@ -27,11 +27,6 @@
                 ?> | <?php _e('All rights reserved'); ?> | Developed by <a href="https://www.properweb.ca">ProperWeb</a> | Tomilenko Company</div>
         </div>
     </div><!-- #wrap -->
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jquery.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/foundation.min.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
     <?php wp_footer(); ?>
 </body>
 </html>
