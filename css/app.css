@@ -1,12 +1,4 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 .contain-to-grid {
-    background: transparent;
-}
-.top-bar {
     background: transparent;
 }
 .top-bar.expanded {
@@ -71,15 +63,12 @@ ul.pagination li a {
 .breadcrumbs>* {
     color: #555;
 }
-@media only screen and (min-width: 40.0625em) {    
-    .top-bar-section ul {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-top: 0;
-    }
-    .top-bar-section ul li {
-        float: none;
-        display: inline-block;
-    }
+
+@media only screen and (min-width: 56.25em) {
+  nav.top-bar {
+    text-align:center;
+  }
+  section.top-bar-section {
+    display: inline-block;
+  }
 }

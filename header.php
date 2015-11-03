@@ -45,7 +45,7 @@
     <div id="wrap">
         <div id="header" class="row">
             <div id="logo" class="large-12 columns">
-                <!--<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/crown.png" alt="">-->
+                <!--<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="">-->
                 <h1 id="who"><?php bloginfo('name'); ?></h1>
                 <?php if (get_option('main_service_type')) : ?>
                 <h2 id="what"><?php echo get_option('main_service_type'); ?></h2>
@@ -76,8 +76,6 @@
                                 wp_nav_menu( array(
                                     'theme_location' => 'primary',
                                     'container'      => false,
-                                    //'container_id'   => 'topmenu',
-                                    //'container_class'=> 'top-bar',
                                     'depth'          => '2', 
                                     'link_before'    => '<span>', 
                                     'link_after'     => '</span>',
@@ -89,14 +87,15 @@
                 </section>
             </nav>
         </div>
-        <div id="content">
-            <!-- Breadcrumb NavXT -->	
-            <?php 
-                if (!(is_front_page() || is_home())): 
-                    if (function_exists('bcn_display') && have_posts()) : ?>
-                        <div id="nav" class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
-                            <?php bcn_display(); ?>
-                        </div>	
-                    <?php endif; ?>
+        <div id="content">	
+        <?php 
+            // IMPORTANT: Remove default separator in Breadcrumb NavXT settings!!!
+            if (!(is_front_page() || is_home())): 
+                if (function_exists('bcn_display') && have_posts()) : ?>
+                    <!-- Breadcrumb NavXT -->
+                    <div id="nav" class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
+                        <?php bcn_display(); ?>
+                    </div>	
                 <?php endif; ?>
+            <?php endif; ?>
 

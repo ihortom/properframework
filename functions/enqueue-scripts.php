@@ -13,7 +13,9 @@ function pweb_scripts_and_styles() {
     wp_deregister_script('jquery');
 	
     // Loads jQuery from vendor directory in footer
-    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.4', true );
+    wp_enqueue_script( 
+        'jquery', 
+        get_template_directory_uri() . '/js/vendor/jquery.js', array(), '2.1.4', true );
     
     wp_enqueue_script(
         'modernizr',
@@ -21,7 +23,8 @@ function pweb_scripts_and_styles() {
     );
     wp_enqueue_script( 
         'foundation', 
-        get_template_directory_uri() . '/js/foundation.min.js', array( 'jquery' ), '', true 
+        get_template_directory_uri() . '/js/foundation.min.js', 
+        array( 'jquery' ), '', true 
     );
     // Adding scripts file in the footer
     wp_enqueue_script( 
@@ -30,6 +33,7 @@ function pweb_scripts_and_styles() {
     );
     
     wp_register_style('normalize', get_stylesheet_directory_uri().'/css/normalize.css');
+    
     wp_enqueue_style(
         'foundation', 
         get_stylesheet_directory_uri().'/css/foundation.min.css',
@@ -41,7 +45,7 @@ function pweb_scripts_and_styles() {
         array( 'normalize' )
     );
     wp_enqueue_style(
-        'properframework', 
+        'site-css', 
         get_stylesheet_directory_uri().'/style.css',
         array( 'normalize' )
     );
