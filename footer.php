@@ -9,7 +9,14 @@
  * @since ProperFramework 1.0
  */
 ?>
+        
+                    <!-- close the off-canvas menu -->
+                    <a class="exit-off-canvas"></a>
+                </div>
+            </div>
+
         </div><!-- #content -->
+        
         <div id="footer">
             <?php if (is_active_sidebar( 'footer_sidebar' )) : ?> 
                 <ul id="footer-sidebar" class="sidebar">

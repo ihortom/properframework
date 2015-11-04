@@ -64,6 +64,14 @@ ul.pagination li a {
     color: #555;
 }
 
+#topmenu {
+    display: none;
+}
+.left-small,
+.tab-bar .menu-icon {
+    width: 100%;
+}
+ 
 @media only screen and (min-width: 56.25em) {
   nav.top-bar {
     text-align:center;
@@ -71,4 +79,11 @@ ul.pagination li a {
   section.top-bar-section {
     display: inline-block;
   }
+  nav.left-off-canvas-menu,
+  nav.tab-bar {
+      display: none;
+  } 
+  #topmenu {
+        display: block;
+    }
 }
