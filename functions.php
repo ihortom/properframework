@@ -24,7 +24,8 @@ require_once(get_template_directory().'/functions/cleanup.php');
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
 // Add menu compatible with 'foundation' framework
-require_once(get_template_directory().'/functions/menu.php'); 
+require_once(get_template_directory().'/functions/menu.php');
+require_once(get_template_directory().'/functions/menu-walkers.php'); 
 
 // Register new custom fields in Settings > General
 require_once(get_template_directory().'/functions/admin.php'); 
