@@ -1,6 +1,6 @@
 <?php
 /**
- * The sidebar containing the main widget area on Post
+ * The sidebar apearing in the search results and 404 pages
  *
  * @package ProperWeb
  * @subpackage ProperFramework

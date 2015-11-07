@@ -71,7 +71,7 @@
             // IMPORTANT: Remove default separator in Breadcrumb NavXT settings!!!
             // Also you would need to enclose some output in <span> tags there
             if (!(is_front_page() || is_home())): 
-                if (function_exists('bcn_display') && have_posts()) : ?>
+                if (function_exists('bcn_display')) : ?>
                     <!-- Breadcrumb NavXT -->
                     <div id="nav" class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">
                         <?php bcn_display(); ?>
