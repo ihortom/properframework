@@ -568,7 +568,8 @@ textarea {
 }
 
 #searchsubmit {
-    padding: 5px 15px;
+    font-size: 1em;
+    padding: .625rem 1.25rem .6rem;
     cursor: pointer;
 }
 

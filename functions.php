@@ -48,6 +48,9 @@ require_once(get_template_directory().'/functions/pagination.php');
 // Custom comments list
 require_once(get_template_directory().'/functions/comments.php');
 
+// Custom search form
+require_once(get_template_directory().'/functions/search-form.php');
+
 /* SHORTCODES */
 
 //create shortcode to make a separator of the new article within the page

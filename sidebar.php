@@ -11,8 +11,9 @@
 <div id="aside" class="right-sidebar">
     <div  class="box with-pads">
         <ul id="aside-sidebar" class="sidebar">
-            <?php dynamic_sidebar( 'Post Aside' ); ?>
-
+            <li class="widget">
+                <?php get_search_form(); ?>
+            </li>
             <?php if ( is_single() ) : ?>
             
             <?php $pweb_term = get_the_terms($post->ID, 'pweb_post_type');
@@ -36,7 +37,8 @@
                     <h3 class="widget-title">Recent <?php the_terms($post->ID, 'pweb_post_type'); ?></h3>
                     <ul>
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
-                        <li class="page_item page-item-<?php echo $post->ID; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Navigate to the page '<?php the_title_attribute(); ?>'"><?php the_title(); ?></a></li>
+                        <li class="page_item page-item-<?php echo $post->ID; ?>">
+                            <a href="<?php the_permalink(); ?>" rel="bookmark" title="Navigate to the post '<?php the_title_attribute(); ?>'"><?php the_title(); ?></a></li>
                     <?php endwhile; ?>
                     </ul>
                 <?php else: ?>
@@ -46,7 +48,7 @@
                 </li>
             <?php endif; ?>
             
-            <li class="widget">	
+            
             <?php    
                 $taxonomies = array( 
                     'category',
@@ -59,6 +61,7 @@
                 );
                 $terms = get_terms( $taxonomies, $args ); //Array of term objects
                 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
+                <li class="widget">	    
                     <h3><?php echo (in_array($pweb_term[0]->name, array('Standard'))) 
                                 ? __('Available ', 'properweb'): __('Other ', 'properweb'); ?> categories:</h3>
                     <ul>
@@ -69,8 +72,8 @@
                             }
                         } ?>
                     </ul>
-                <?php endif; ?>
-            </li>   
+                </li> 
+            <?php endif; ?>           
             
             <li class="widget">		
                 <h3>Recent Posts</h3>
@@ -87,7 +90,9 @@
                     ?>
                 </ul>
             </li>
-            <?php endif; ?>
+            <?php endif; 
+                dynamic_sidebar( 'Post Aside' );
+            ?>
 	</ul>
     </div>
 </div>
