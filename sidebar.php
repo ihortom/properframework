@@ -14,32 +14,80 @@
             <?php dynamic_sidebar( 'Post Aside' ); ?>
 
             <?php if ( is_single() ) : ?>
+            
+            <?php $pweb_term = get_the_terms($post->ID, 'pweb_post_type');
+            if ($pweb_term && !in_array($pweb_term[0]->name, array('Standard'))) : ?>
+                <li class="widget">	
+                <?php    
+                    $args = array(
+                        'post__not_in' => array($post->ID),
+                        'posts_per_page'=>10,
+                        'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'pweb_post_type',
+                                    'field'    => 'slug',
+                                    'terms'    => $pweb_term[0]->slug
+                                )
+                        )
+                    );
+                    $current_pweb_term = $pweb_term[0]->name;
+                $query = new WP_Query( $args );
+                if( $query->have_posts() ) : ?>
+                    <h3 class="widget-title">Recent <?php the_terms($post->ID, 'pweb_post_type'); ?></h3>
+                    <ul>
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                        <li class="page_item page-item-<?php echo $post->ID; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Navigate to the page '<?php the_title_attribute(); ?>'"><?php the_title(); ?></a></li>
+                    <?php endwhile; ?>
+                    </ul>
+                <?php else: ?>
+                    <p>This is the only post of the category <?php the_terms($post->ID, 'pweb_post_type'); ?></p>
+                <?php endif; 
+                    wp_reset_query(); ?>
+                </li>
+            <?php endif; ?>
+            
+            <li class="widget">	
+            <?php    
+                $taxonomies = array( 
+                    'category',
+                    'pweb_post_type',
+                );
+                $args = array(
+                    'orderby'           => 'name', 
+                    'order'             => 'ASC',
+                    'hide_empty'        => true, 
+                );
+                $terms = get_terms( $taxonomies, $args ); //Array of term objects
+                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
+                    <h3><?php echo (in_array($pweb_term[0]->name, array('Standard'))) 
+                                ? __('Available ', 'properweb'): __('Other ', 'properweb'); ?> categories:</h3>
+                    <ul>
+                    <?php
+                        foreach ( $terms as $term ) {
+                            if ( ! in_array($term->name, array('Standard', 'Uncategorised', $current_pweb_term))) {
+                                echo '<li><a href="'.get_term_link($term).'">' .$term->name.'</a></li>';
+                            }
+                        } ?>
+                    </ul>
+                <?php endif; ?>
+            </li>   
+            
             <li class="widget">		
-                <?php
-                    $categories = get_the_category();
-                    if ($categories) : ?>
-                        <h3 class="widget-title">Other posts of this category</h3>
-                            <ul>
-                                <?php foreach ($categories as $category) :
-                                    $args=array(
-                                            'cat' => $category->cat_ID,
-                                            'post__not_in' => array($post->ID),
-                                            'posts_per_page'=>10,
-                                            'caller_get_posts'=>1
-                                    );
-                                        $the_query = new WP_Query($args);
-                                        if( $the_query->have_posts() ) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                                                <li class="page_item page-item-<?php echo $post->ID; ?>"><a href="<?php the_permalink(); ?>" rel="bookmark" title="Navigate to the page '<?php the_title_attribute(); ?>'"><?php the_title(); ?></a></li>
-                                                 <?php
-                                        endwhile; endif; //if ($the_query)
-                                    endforeach; //foreach
-                                endif; //if ($categories) ?>
-                            </ul>
-                        <?php wp_reset_query();  // Restore global post data stomped by the_post().
-                    else : ?>
-                    <p>This is the only post of this category</p>
-                <?php endif; //if (is_single()) ?>
+                <h3>Recent Posts</h3>
+                <ul>
+                    <?php
+                        $args = array( 
+                            'numberposts' => '10', 
+                            'exclude' => $post->ID 
+                        );
+                        $recent_posts = wp_get_recent_posts( $args );
+                        foreach( $recent_posts as $recent ){
+                            echo '<li><a href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"].'</a></li> ';
+                        }
+                    ?>
+                </ul>
             </li>
+            <?php endif; ?>
 	</ul>
     </div>
 </div>

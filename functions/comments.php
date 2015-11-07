@@ -17,12 +17,12 @@ function pweb_comments ($comment, $args, $depth) {
                                 ?>
                                 &nbsp;&nbsp;&nbsp;
                                 <?php
-                                        edit_comment_link(__('(Edit)','wip')); 
+                                        edit_comment_link(__('(Edit)','properweb')); 
                                 ?>
                         </time>
                     </header>
                     <?php if ($comment->comment_approved == '0') : ?>
-                             <br /><em><?php _e('Your comment is awaiting approval.','wip') ?></em>
+                             <br /><em><?php _e('Your comment is awaiting approval.','properweb') ?></em>
                     <?php endif; ?>
 
                     <?php comment_text() ?>
