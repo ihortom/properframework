@@ -20,32 +20,36 @@
                         <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php esc_attr_e('Log out of this account'); ?>"><?php _e('Log out &raquo;'); ?></a></p>
                 <?php else : ?>
 
-                <p style="text-align: center; margin-bottom: 20px;">Your e-mail will not be shared. All the fields are mandatory. *</p>
+                <p class="text-center">Your e-mail will not be shared. All the fields are mandatory. *</p><br>
+                <div class="row medium-collapse large-uncollapse">
+                    <div class="medium-12 large-6 columns">
+                        <div id="contacts" class="row small-collapse medium-uncollapse">
+                            <div class="medium-6 large-12 columns">
+                                <label for="author"><?php _e('Name:'); ?> <?php if ($req) _e('*'); ?></label><br>
+                                <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+                            </div>
 
-                <div id="contacts">
-                    <div>
-                        <label for="author"><?php _e('Name:'); ?> <?php if ($req) _e('*'); ?></label><br>
-                        <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+                            <div class="medium-6 large-12 columns">
+                                <label for="email"><?php _e('Email:'); ?> <?php if ($req) _e('*'); ?></label><br>
+                                <input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+                            </div>
+                        </div>
                     </div>
-
-                    <div>
-                        <label for="email"><?php _e('Email:'); ?> <?php if ($req) _e('*'); ?></label><br>
-                        <input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-                    </div>
-                </div>
                 <?php endif; ?>
-
+                    <div class="medium-12 large-6 columns">
                 <div id="message">
                         <label for="comment"><?php _e('Message: *'); ?></label><br>
                         <textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"></textarea>
 
                         <p><small><?php printf(__('<strong>XHTML:</strong> You can use these tags: <code>%s</code>'), allowed_tags()); ?></small></p>
-                </div>			
+                </div>
+                    </div>
+                </div>
                 <?php
                         /** This filter is documented in wp-includes/comment-template.php */
                         do_action( 'comment_form', $post->ID );
                 ?>
-                <p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Message'); ?>" />
+                <p class="clearfix text-center"><input name="submit" type="submit" id="submit" class="button round small" tabindex="5" value="<?php esc_attr_e('Submit Message'); ?>" />
                 <?php comment_id_fields(); ?></p>
             </form>
 

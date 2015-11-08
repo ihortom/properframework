@@ -615,17 +615,17 @@ textarea {
 }
 
 #respond #contacts {
-    width: 200px;
+    width: 100%;
     float: left;
 }
 
 #respond #message {
-    width: 350px;
+    width: 100%;
     float: right;
 }
 
 #comment {
-    width: 340px;
+    width: 100%;
 }
 
 #respond #contacts input {
@@ -779,6 +779,7 @@ span.author {
 input[type=submit] {
     background: #98F205;
     padding: 10px;
+    margin: 0;
     color: #ED008C;
     font-weight: bold;
     -webkit-border-radius: 3px;
@@ -793,7 +794,7 @@ input[type=submit] {
     float: none;
     width: auto;
     position: relative;
-    display: block;
+    display: inline-block;
     border: none;
     text-shadow: none;
     text-transform: uppercase;

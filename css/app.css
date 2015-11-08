@@ -71,7 +71,17 @@ ul.pagination li a {
 .tab-bar .menu-icon {
     width: 100%;
 }
- 
+
+@media only screen and (max-width: 50em) {
+    #contacts {
+        margin: 0;
+    }
+    #contacts .medium-6 {
+        width: 100%;
+        padding: 0;
+    }
+}
+
 @media only screen and (min-width: 56.25em) {
   nav.top-bar {
     text-align:center;

@@ -63,8 +63,8 @@
         
         <?php 
             // Menu: topbar will switch with off-canvas on resizing
-            include 'topbar.php';
-            include 'off-canvas.php'; 
+            include_once 'parts/topbar.php';
+            include_once 'parts/off-canvas.php'; 
         ?>              
         <div id="content">	
         <?php 
