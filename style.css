@@ -352,7 +352,7 @@ th {
 }
 
 #content img {
-    display: block;
+    display: inline-block;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -726,18 +726,19 @@ small {
 }
 
 .comment-avatar {
-    width: auto;
+/*    width: auto;
     max-width: 75px;
-    float: left;
-    padding: 0 10px 0 5px;
+    float: left;*/
+    padding: 0 10px;
+    border-right: 1px solid #FCEDED;
 }
 
 .comment-text {
-    max-width: 587px;
-    width: 100%;
+    _max-width: 587px;
+    _width: 100%;
     padding: 0 10px;
-    float: right;
-    border-left: 1px solid #FCEDED;
+    _float: right;
+    _border-left: 1px solid #FCEDED;
 }
 
 .comment-text p:before {
@@ -847,7 +848,7 @@ input[type=submit] {
     #who { font-size: 4.0em; }
     #why { font-size: 1.7em; }
 }
-@media only screen and (min-width: 40.0625em) {
+@media only screen and (min-width: 42.5em) {
 
     #aside {
         width: 300px;

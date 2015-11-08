@@ -72,6 +72,14 @@ ul.pagination li a {
     width: 100%;
 }
 
+.row .row {
+    margin: 0;
+}
+
+.row-with-sidebar .cell {
+    min-width: 340px !important;
+}
+
 @media only screen and (max-width: 50em) {
     #contacts {
         margin: 0;
