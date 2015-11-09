@@ -352,7 +352,7 @@ th {
 }
 
 #content img {
-    display: block;
+    display: inline-block;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -568,7 +568,8 @@ textarea {
 }
 
 #searchsubmit {
-    padding: 5px 15px;
+    font-size: .8125rem;
+    padding: .625rem 1.25rem .6rem;
     cursor: pointer;
 }
 
@@ -590,6 +591,13 @@ textarea {
 /* Hides from IE-mac \*/
 * html .clearfix { height: 1%; } /* needed for ie6 */
 /* End hide from IE-mac */
+
+#name {
+    padding-left: 0;
+}
+#email {
+    padding-right: 0;
+}
 
 #respond {
     margin: 0 auto;
@@ -614,17 +622,17 @@ textarea {
 }
 
 #respond #contacts {
-    width: 200px;
+    width: 100%;
     float: left;
 }
 
 #respond #message {
-    width: 350px;
+    width: 100%;
     float: right;
 }
 
 #comment {
-    width: 340px;
+    width: 100%;
 }
 
 #respond #contacts input {
@@ -725,18 +733,19 @@ small {
 }
 
 .comment-avatar {
-    width: auto;
+/*    width: auto;
     max-width: 75px;
-    float: left;
-    padding: 0 10px 0 5px;
+    float: left;*/
+    padding: 0 10px;
+    border-right: 1px solid #FCEDED;
 }
 
 .comment-text {
-    max-width: 587px;
-    width: 100%;
+    _max-width: 587px;
+    _width: 100%;
     padding: 0 10px;
-    float: right;
-    border-left: 1px solid #FCEDED;
+    _float: right;
+    _border-left: 1px solid #FCEDED;
 }
 
 .comment-text p:before {
@@ -778,6 +787,7 @@ span.author {
 input[type=submit] {
     background: #98F205;
     padding: 10px;
+    margin: 0;
     color: #ED008C;
     font-weight: bold;
     -webkit-border-radius: 3px;
@@ -792,7 +802,7 @@ input[type=submit] {
     float: none;
     width: auto;
     position: relative;
-    display: block;
+    display: inline-block;
     border: none;
     text-shadow: none;
     text-transform: uppercase;
@@ -845,10 +855,10 @@ input[type=submit] {
     #who { font-size: 4.0em; }
     #why { font-size: 1.7em; }
 }
-@media only screen and (min-width: 40.0625em) {
+@media only screen and (min-width: 42.5em) {
 
     #aside {
-        width: 300px;
+        width: 280px;
         display: table-cell;
         vertical-align: top;
         padding-top: 0;

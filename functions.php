@@ -24,7 +24,8 @@ require_once(get_template_directory().'/functions/cleanup.php');
 require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
 // Add menu compatible with 'foundation' framework
-require_once(get_template_directory().'/functions/menu.php'); 
+require_once(get_template_directory().'/functions/menu.php');
+require_once(get_template_directory().'/functions/menu-walkers.php'); 
 
 // Register new custom fields in Settings > General
 require_once(get_template_directory().'/functions/admin.php'); 
@@ -43,6 +44,12 @@ require_once(get_template_directory().'/functions/theme-support.php');
 
 // Pagination compatible with 'foundation' markup
 require_once(get_template_directory().'/functions/pagination.php'); 
+
+// Custom comments list
+require_once(get_template_directory().'/functions/comments.php');
+
+// Custom search form
+require_once(get_template_directory().'/functions/search-form.php');
 
 /* SHORTCODES */
 
@@ -112,3 +119,37 @@ function pweb_promo( $atts, $content = null  ) {
 }
 
 ?> 
+<?php
+// get taxonomies terms links
+function custom_taxonomies_terms_links(){
+  // get post by post id
+  $post = get_post( $post->ID );
+
+  // get post type by post
+  $post_type = $post->post_type;
+
+  // get post type taxonomies
+  $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+  $out = array();
+  foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+    // get the terms related to post
+    $terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+    if ( !empty( $terms ) ) {
+      $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+      foreach ( $terms as $term ) {
+        $out[] =
+          '  <li><a href="'
+        .    get_term_link( $term->slug, $taxonomy_slug ) .'">'
+        .    $term->name
+        . "</a></li>\n";
+      }
+      $out[] = "</ul>\n";
+    }
+  }
+
+  return implode('', $out );
+}
+?>
