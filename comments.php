@@ -14,6 +14,7 @@
 
             <?php include_once 'parts/comments-form.php'; ?>
 
+
             <?php endif; // If registration required and not logged in ?>
         </div>
 	
