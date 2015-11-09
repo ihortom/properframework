@@ -72,7 +72,8 @@ ul.pagination li a {
     width: 100%;
 }
 
-.row .row {
+.row .row,
+form .row .row {
     margin: 0;
 }
 
@@ -86,6 +87,12 @@ ul.pagination li a {
     }
     #contacts .medium-6 {
         width: 100%;
+        padding: 0;
+    }
+    #name.medium-6 {
+        padding: 0;
+    }
+    #email.medium-6 {
         padding: 0;
     }
 }
@@ -103,5 +110,13 @@ ul.pagination li a {
   } 
   #topmenu {
         display: block;
+    }
+}
+@media only screen and (min-width: 64.063em) {
+    #name.medium-6 {
+        padding-right: 0;
+    }
+    #email.medium-6 {
+        padding-left: 0;
     }
 }

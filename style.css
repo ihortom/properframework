@@ -568,7 +568,7 @@ textarea {
 }
 
 #searchsubmit {
-    font-size: 1em;
+    font-size: .8125rem;
     padding: .625rem 1.25rem .6rem;
     cursor: pointer;
 }
@@ -591,6 +591,13 @@ textarea {
 /* Hides from IE-mac \*/
 * html .clearfix { height: 1%; } /* needed for ie6 */
 /* End hide from IE-mac */
+
+#name {
+    padding-left: 0;
+}
+#email {
+    padding-right: 0;
+}
 
 #respond {
     margin: 0 auto;
@@ -851,7 +858,7 @@ input[type=submit] {
 @media only screen and (min-width: 42.5em) {
 
     #aside {
-        width: 300px;
+        width: 280px;
         display: table-cell;
         vertical-align: top;
         padding-top: 0;
