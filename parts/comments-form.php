@@ -25,9 +25,9 @@
         <div class="medium-12 large-6 columns">
             <div id="message">
                 <label for="comment"><?php _e('Message: *'); ?></label><br>
-                <textarea name="comment" id="comment" cols="40" rows="7" tabindex="4"></textarea>
+                <textarea name="comment" id="comment" cols="40" rows="5" tabindex="4"></textarea>
 
-                <p><small><?php printf(__('<strong>XHTML:</strong> You can use these tags: <code>%s</code>'), allowed_tags()); ?></small></p>
+                <p><small><?php printf(__('<strong>HTML:</strong> You can use these tags: <code>%s</code>'), allowed_tags()); ?></small></p>
             </div>
         </div>
     </div>

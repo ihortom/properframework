@@ -6,7 +6,7 @@ function pweb_comments ($comment, $args, $depth) {
     <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
         <div id="comment-<?php comment_ID(); ?>" class="comment-container">
             <div class="row small-uncollapse">
-                <div class="comment-avatar text-center small-3 medium-2 columns">
+                <div class="comment-avatar text-center small-centered small-3 medium-2 columns">
                     <?php echo get_avatar( $comment->comment_author_email, 50 ); ?>
                 </div>
                 <div class="comment-author small-9 medium-10 columns">
