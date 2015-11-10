@@ -15,8 +15,17 @@ function pweb_custom_sizes( $sizes ) {
 add_filter('single_template', create_function(
 	'$the_template',
 	'foreach( (array) get_the_category() as $cat ) {
-		if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
-		return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
+            if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
+            return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
+	return $the_template;' )
+);
+
+//gets pweb_post_type slug and looks for single-[pweb_post_type slug].php and applies it
+add_filter('single_template', create_function(
+	'$the_template',
+	'foreach( (array) get_the_terms($post->ID, "pweb_post_type") as $cat ) {
+            if ( file_exists(TEMPLATEPATH . "/single-{$cat->slug}.php") )
+            return TEMPLATEPATH . "/single-{$cat->slug}.php"; }
 	return $the_template;' )
 );
 

@@ -9,8 +9,6 @@
  * @uses Single-Choice Post Taxonomy: 'pweb_post_type' @see ../../mu-plugins/pweb_single_choice_tax.php
  * @uses Breadcrumb NavXT: 'bcn_display' @see http://mtekk.us/code/breadcrumb-navxt/
  */
-?>
-<?php
 
 // Set up the content width value based on the theme's design and stylesheet.
 if ( ! isset( $content_width ) ) {
@@ -118,8 +116,6 @@ function pweb_promo( $atts, $content = null  ) {
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
 }
 
-?> 
-<?php
 // get taxonomies terms links
 function custom_taxonomies_terms_links(){
   // get post by post id

@@ -42,7 +42,8 @@
                     <?php endwhile; ?>
                     </ul>
                 <?php else: ?>
-                    <p>This is the only post of the category <?php the_terms($post->ID, 'pweb_post_type'); ?></p>
+                    <p><?php _e('This is the only post of the category ', 'properweb'); 
+                        the_terms($post->ID, 'pweb_post_type'); ?></p>
                 <?php endif; 
                     wp_reset_query(); ?>
                 </li>
@@ -63,7 +64,9 @@
                 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
                 <li class="widget">	    
                     <h3><?php echo (in_array($pweb_term[0]->name, array('Standard'))) 
-                                ? __('Available ', 'properweb'): __('Other ', 'properweb'); ?> categories:</h3>
+                                ? __('Available ', 'properweb'): __('Other ', 'properweb'); 
+                                _e('categories', 'properweb')?>
+                    </h3>
                     <ul>
                     <?php
                         foreach ( $terms as $term ) {
@@ -76,7 +79,7 @@
             <?php endif; ?>           
             
             <li class="widget">		
-                <h3>Recent Posts</h3>
+                <h3><?php _e('Recent Posts','properweb'); ?></h3>
                 <ul>
                     <?php
                         $args = array( 
