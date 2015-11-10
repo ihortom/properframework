@@ -11,9 +11,9 @@
     <div class="row row-with-sidebar">
         <div class="cell">
             <div class="article article-with-sidebar box full-width er404">
-                    <h2 class="title">Document not found</h2>
-                    <h3>Sorry, the page you were looking for was not found.</h3>
-                    <p>Try to use search.</p>
+                    <h2 class="title"><?php _e('Document not found','properweb'); ?></h2>
+                    <h3><?php _e('Sorry, the page you were looking for was not found.','properweb'); ?></h3>
+                    <p><?php _e('It might have been removed or relocated. Try to use the search.','properweb'); ?></p>
             </div>
         </div>
         <div id="aside" class="right-sidebar">

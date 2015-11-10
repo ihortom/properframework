@@ -106,7 +106,6 @@ small code {
     height: 230px; 
     position: absolute; 
     z-index: -100; 
-    /*background-color: #ECACAA;*/
 }
 
 #header {
@@ -164,7 +163,7 @@ small code {
 }
 
 /***** Slider *****/
-#content #slider a img {		/* for IE */
+#content #slider a img {	/* for IE */
     border: 0;
     outline: none;
     border-radius: 0;
@@ -177,7 +176,7 @@ small code {
 
 /***** CONTENT *****/
 #content {
-    width: 100%;					/* link to footer */
+    width: 100%;
     color: #000;
     margin-top: 2px;
     padding: 0;
@@ -266,10 +265,6 @@ th {
 #aside-sidebar {
     text-decoration: none;
 }
-
-/*#aside-sidebar ul {
-    margin-left: 20px !important;
-}*/
 
 #aside-sidebar > li {
     margin-bottom: 20px;
@@ -454,7 +449,6 @@ h6 {
     padding: 10px 0;
     color: #936C79;
     margin-top: 20px;
-/*    float: left;*/
 }
 
 #footer a {
@@ -696,19 +690,12 @@ label {
 }
 
 .comment-avatar {
-/*    width: auto;
-    max-width: 75px;
-    float: left;*/
     padding: 0 10px;
     border-right: 1px solid #FCEDED;
 }
 
 .comment-text {
-    _max-width: 587px;
-    _width: 100%;
     padding: 0 10px;
-    _float: right;
-    _border-left: 1px solid #FCEDED;
 }
 
 .comment-text p:before {
@@ -749,31 +736,14 @@ span.author {
 
 input[type=submit] {
     background: #98F205;
-/*    padding: 10px;
-    margin: 0;*/
     color: #ED008C;
     font-weight: bold;
-/*    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;*/
     font-family: 'Open Sans', sans-serif;
-/*    text-align: center;
-    float: none;
-    width: auto;
-    position: relative;
-    display: inline-block;
-    border: none;
-    text-shadow: none;*/
     text-transform: uppercase;
-/*    cursor: pointer;*/
 }
 
 .read-more {
     font-size: 1.25em;
-/*    line-height: 1em;*/
     color: #ED008C;
     text-decoration: none;
 }
@@ -789,6 +759,10 @@ input[type=submit] {
 
 .gallery img:hover {
     border-color: #98F205 !important;
+}
+
+#content .company {
+    font-family: 'Eras Bk BT', Philosopher, 'Open Sans', sans-serif;
 }
 
 @media only screen and (max-width: 31.25em) {   /* 340px */

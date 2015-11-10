@@ -2,7 +2,6 @@
 header('content-type:text/css');
 header("Expires: ".gmdate("D, d M Y H:i:s", (time()+900)) . " GMT");
 
-//include 'admin/includes/params.inc.php';
 // grab the c parameter and ensure that it contains .css is no slashes
 // this is a safety measure to prevent XSS
 $c=$_GET['c'];
