@@ -81,6 +81,13 @@ form .row .row {
     min-width: 340px !important;
 }
 
+code {
+    background-color: transparent;
+}
+
+button,
+.button { margin: 0; }
+
 @media only screen and (max-width: 50em) {
     #contacts {
         margin: 0;

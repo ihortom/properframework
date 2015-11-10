@@ -20,7 +20,6 @@
             <time datetime="<?php the_date(); ?>" class="post-date">
                     <?php the_time( get_option( 'date_format' ) ); ?>
             </time>
-            </time>
             <p class="line"></p>
             <?php 
                 if ( has_post_thumbnail() ) {
