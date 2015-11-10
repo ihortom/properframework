@@ -79,13 +79,25 @@ body {
     line-height: 1.3;
 }
 
+small {
+    font-size: 85%;
+}
+
+code {
+    font-family: Consolas,"Liberation Mono",Courier,monospace
+}
+
+small code {
+    font-size: .95em;
+}
+
 #wrap {
     background-color: transparent;
     color: #000;
     width: 100%;
     margin: 0 auto;
     position: relative; /* makes any absolute element reletive to container */
-    font: normal normal 1em Philosopher, Verdana, Tahoma, Arial, sans-serif;
+    font: normal normal 1em Philosopher, 'Open Sans', Verdana, Tahoma, Arial, sans-serif;
 }
 
 /***** HEADER *****/
@@ -130,7 +142,7 @@ body {
     top: 0;
     right: 0;
     color: #333;
-    font: normal normal 1.2em Philosopher, 'Open Sans', Verdana, Arial, "Times New Roman", Times, serif;
+    font: normal normal 1.2em Philosopher, 'Open Sans', Verdana, Helvetica, Arial, Times, sans-serif;
     margin: 10px
 }
 
@@ -138,7 +150,7 @@ body {
     display: block; 
     color: #333; 
     text-align:center;
-    font: italic normal 1.9em 'Eras Bk BT', 'Open Sans', Verdana, Arial, "Times New Roman",Times, Helvetica, cursive, serif;
+    font: italic normal 1.9em 'Eras Bk BT', 'Open Sans', Verdana, Helvetica, Arial, Times, sans-serif;
     text-shadow: 3px 3px 5px #777;
 }
 
@@ -147,7 +159,7 @@ body {
     width: 100%;
     background-color: transparent;
     font-weight: 700;
-    font: normal bold 1em Philosopher, 'Open Sans',Tahoma,Arial,sans-serif;
+    font: normal bold 1em Philosopher, 'Open Sans', Tahoma,  Arial, sans-serif;
     margin: 0;
 }
 
@@ -442,7 +454,7 @@ h6 {
     padding: 10px 0;
     color: #936C79;
     margin-top: 20px;
-    float: left;
+/*    float: left;*/
 }
 
 #footer a {
@@ -478,19 +490,6 @@ h6 {
     width: 33%;
     text-align: left;
     font-weight: 400;
-}
-
-#footer #FSContact1 input[type=text] {
-    width: 30px;
-}
-
-#footer #FSContact1 img {
-    border-radius: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
 }
 
 #copyright {
@@ -579,17 +578,8 @@ textarea {
 }
 
 #respond {
-    margin: 0 auto;
-    border: 1px solid #A2E04D;
+    border-color: #A2E04D;
     background: #E3FCD6;
-    padding: 20px 45px;
-    border-radius: 2px;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-    -moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
-    -webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.4);
-    overflow: hidden;
 }
 
 #respond h3 {
@@ -600,30 +590,20 @@ textarea {
     margin: 0 auto;
 }
 
-#respond #contacts {
-    width: 100%;
-    float: left;
-}
-
-#respond #message {
-    width: 100%;
-    float: right;
-}
-
 #comment {
     width: 100%;
 }
 
 #respond #contacts input {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #respond #message textarea {
     margin: 0;
 }
 
-small {
-    font-size: 90%;
+label {
+    margin: .5em 0 .45em;
 }
 
 #comments {
@@ -700,8 +680,12 @@ small {
     background-color: #F5D4CF;
 }
 
-#content ul.comment-list {
+#content ul.comment-list,
+#content ul.comment-list ul.children {
     list-style-type: none;
+}
+
+#content ul.comment-list {
     margin: 0;
 }
 
@@ -756,7 +740,7 @@ span.author {
 }
 
 #comments .children {
-    margin-left: 65px;
+    margin-left: 10%;
 }
 
 .children .comment-text {
@@ -765,32 +749,31 @@ span.author {
 
 input[type=submit] {
     background: #98F205;
-    padding: 10px;
-    margin: 0;
+/*    padding: 10px;
+    margin: 0;*/
     color: #ED008C;
     font-weight: bold;
-    -webkit-border-radius: 3px;
+/*    -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    font-family: 'Abel', sans-serif;
-    font-size: 1em;
-    text-align: center;
+    -o-transition: all .3s ease;*/
+    font-family: 'Open Sans', sans-serif;
+/*    text-align: center;
     float: none;
     width: auto;
     position: relative;
     display: inline-block;
     border: none;
-    text-shadow: none;
+    text-shadow: none;*/
     text-transform: uppercase;
-    cursor: pointer;
+/*    cursor: pointer;*/
 }
 
 .read-more {
-    font-size: 20px;
-    line-height: 1em;
+    font-size: 1.25em;
+/*    line-height: 1em;*/
     color: #ED008C;
     text-decoration: none;
 }
@@ -798,28 +781,6 @@ input[type=submit] {
 .to-article {
     text-decoration: none;
     border-bottom: 1px dotted #ED008C;
-}
-
-/* slider */
-#content img#huge_it_slideshow_image_2 {
-    border-radius: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-}
-
-.huge_it_slideshow_dots_thumbnails_2 {
-    display: none !important;
-}
-
-.huge_it_slideshow_title_text_2 {
-    font-size: 130% !important;
-}
-
-.huge_it_slideshow_description_text_2 {
-    font-size: 110% !important;
 }
 
 .gallery img {
@@ -830,15 +791,11 @@ input[type=submit] {
     border-color: #98F205 !important;
 }
 
-small {
-    font-size: .8em;
-}
-
-@media only screen and (max-width: 31.25em) {
+@media only screen and (max-width: 31.25em) {   /* 340px */
     #who { font-size: 4.0em; }
     #why { font-size: 1.7em; }
 }
-@media only screen and (min-width: 42.5em) {
+@media only screen and (min-width: 42.5em) {    /* 680px */
 
     #aside {
         width: 280px;
@@ -865,7 +822,6 @@ small {
         width: 100%;
     }
 }
-@media only screen and (min-width: 64.0625em) {
+@media only screen and (min-width: 64.0625em) { /* 1024px */
     #wrap { width: 1000px; }  
 }
-

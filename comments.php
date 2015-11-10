@@ -1,7 +1,7 @@
 <?php if ( comments_open() ) : ?>
 
     <div id="gbook">
-	<div id="respond">
+	<div id="respond" class="panel callout radius">
             <h3><?php comment_form_title( __('LEAVE A COMMENT', 'properweb') ); ?></h3>
 
             <div id="cancel-comment-reply">
