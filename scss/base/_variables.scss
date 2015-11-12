@@ -11,7 +11,7 @@ $footer-default-font: normal bold .75em 'Open Sans', Tahoma, Arial, sans-serif;
 
 //Colors
 $theme-container-color: #008CBA;
-$footer-default-text-color: #936C79;
+$footer-default-text-color: $theme-container-color; //#936C79 - old
 
 //Dimantions
 $cap-height: 230px;

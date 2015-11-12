@@ -30,6 +30,32 @@
         width: 100%;
     }
 }
-@media only screen and (min-width: 64.0625em) {     // 1024px
-    #wrap { width: $main-content-max-width; }  
+
+@media only screen and (min-width: 56.25em) {   //900px
+  nav.top-bar {
+    text-align:center;
+  }
+  section.top-bar-section {
+    display: inline-block;
+  }
+  nav.left-off-canvas-menu,
+  nav.tab-bar {
+      display: none;
+  } 
+  #topmenu {
+        display: block;
+    }
 }
+
+@media only screen and (min-width: 64.0625em) {     // 1024px
+    #wrap { 
+        width: $main-content-max-width; 
+    }  
+    #name.medium-6 {
+        padding-right: 0;
+    }
+    #email.medium-6 {
+        padding-left: 0;
+    }
+}
+

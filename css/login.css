@@ -1,9 +1,15 @@
 body.login {
-    background: #484849;
+    background: #ECFAFF;
 }
 #login {
-    background: #484849;
+    background: #ECFAFF;
 }
 #loginform {
-    background: #F29A3B;
+    background: #A0D3E8;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(34,25,25,0.4);
+    -moz-box-shadow: 2px 2px 2px rgba(34,25,25,0.4);
+    -webkit-box-shadow: 2px 2px 2px rgba(34,25,25,0.4);
 }

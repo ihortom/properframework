@@ -1,0 +1,15 @@
+#wrap {
+    background-color: transparent;
+    color: #000;
+    width: 100%;
+    margin: 0 auto;
+    position: relative; // makes any absolute element reletive to container
+    font: $default-font;
+}
+
+.box {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid $theme-container-color;
+    overflow: hidden;
+}

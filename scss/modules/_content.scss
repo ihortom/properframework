@@ -37,7 +37,8 @@
     font-size: 1em;
 }
 
-.article, #content .front-page {
+.article, 
+#content .front-page {
     padding: 0 20px 20px;
 }
 
@@ -179,17 +180,6 @@
     height: 200px;
 }
 
-/*
-.children .comment-text {
-    max-width: 510px;
-}
-
-.read-more {
-    font-size: 1.25em;
-    color: #ED008C;
-    text-decoration: none;
-}
-*/
 .to-article {
     text-decoration: none;
     border-bottom: 1px dotted #FFF;

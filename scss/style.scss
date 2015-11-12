@@ -22,11 +22,15 @@ Version: 1.0
 @import 'base/default';
 @import 'modules/header';
 @import 'modules/nav';
-//@import 'modules/slider';
+@import 'partials/breadcrumbs';
+//@import 'partials/slider';
 @import 'modules/content';
+@import 'partials/grid';
 @import 'modules/aside';
-@import 'modules/footer';
-
+@import 'partials/pagination';
 //@import 'partials/gallery';
-@import 'partials/comments';
-@import 'partials/media';   //must be last one
+@import 'modules/comments';
+@import 'modules/footer';
+@import 'partials/box';
+@import 'partials/button';
+@import 'partials/media';   //should be last one
