@@ -17,9 +17,11 @@
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
         <div class="article article-with-sidebar box full-width">
             <h2 class="title"><a class="to-article" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <time datetime="<?php the_date(); ?>" class="post-date">
-                    <?php the_time( get_option( 'date_format' ) ); ?>
-            </time>
+            <div class="row text-left">
+                <time datetime="<?php the_date(); ?>" class="post-date">
+                        <?php the_time( get_option( 'date_format' ) ); ?>
+                </time>
+            </div>
             <p class="line"></p>
             <?php 
                 if ( has_post_thumbnail() ) {
