@@ -1,0 +1,36 @@
+/*
+Theme Name: Proper Framework
+Theme URI: https://www.properweb.ca
+Description: Custom theme developed as a basic framework for web sites built by <a href="https://www.properweb.ca/">ProperWeb</a>
+Author: ProperWeb
+Author URI: https://www.properweb.ca
+Version: 1.0
+*/
+
+
+@font-face {
+    font-family: Eras Bd BT;
+    src: url('fonts/erasb.woff') format('woff'), url('fonts/erasb.ttf') format('truetype');
+}
+@font-face {
+    font-family: Eras Bk BT;
+    src: url('fonts/erasn.woff') format('woff'), url('fonts/erasn.ttf') format('truetype');
+}
+
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/default';
+@import 'modules/header';
+@import 'modules/nav';
+@import 'partials/breadcrumbs';
+//@import 'partials/slider';
+@import 'modules/content';
+@import 'partials/grid';
+@import 'modules/aside';
+@import 'partials/pagination';
+//@import 'partials/gallery';
+@import 'modules/comments';
+@import 'modules/footer';
+@import 'partials/box';
+@import 'partials/button';
+@import 'partials/media';   //should be last one

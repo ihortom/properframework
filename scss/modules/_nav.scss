@@ -1,0 +1,67 @@
+/***** NAVIGATOR *****/
+#nav {
+    width: 100%;
+    background-color: transparent;
+    font: $nav-default-font;
+    margin: 0;
+}
+
+#content ul.sidebar,
+.menu {
+    list-style-type: none;
+} 
+
+//Foundation amendment
+.top-bar.expanded {
+    background: #555;
+}
+.top-bar .toggle-topbar {
+    left: 0;
+    right: initial;
+}
+.top-bar-section>ul {
+    margin-top: 2.8125rem;
+    background-color: #555;
+}
+.top-bar-section ul li>a {
+    color: #fff;
+    background-color: #555;
+    display: block;
+    font-family: Philosopher,'Open Sans',"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-size: 1em;
+    padding: 0 0.9375rem;
+}
+.top-bar .toggle-topbar,
+.top-bar .toggle-topbar.menu-icon {
+    margin-top: 0;
+    z-index: 100;
+    background-color: #555;
+    width: 100%;
+}
+.top-bar .toggle-topbar a,
+.top-bar .toggle-topbar.menu-icon a {
+    color: #fff;
+    height: 2.8125rem;
+    line-height: 2.8125rem;
+}
+.top-bar .toggle-topbar a span:before,
+.top-bar .toggle-topbar.menu-icon a span:before {
+    content: '\f0c9';
+    font-family: FontAwesome;    
+    font-size: 2em;
+    font-weight: 400;
+    padding: 0 10px 0 0;
+    vertical-align: middle;
+}
+.top-bar-section .dropdown li a {
+    padding: 0 0.9375rem;
+}
+
+#topmenu {
+    display: none;
+}
+
+.left-small,
+.tab-bar .menu-icon {
+    width: 100%;
+}

@@ -1,0 +1,32 @@
+/***** Slider *****/
+#content #slider a img {	/* for IE */
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+#content img#huge_it_slideshow_image_2 {
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.huge_it_slideshow_dots_thumbnails_2 {
+    display: none !important;
+}
+
+.huge_it_slideshow_title_text_2 {
+    font-size: 130% !important;
+}
+
+.huge_it_slideshow_description_text_2 {
+    font-size: 110% !important;
+}

@@ -1,0 +1,61 @@
+//Media directives
+@media only screen and (max-width: 31.25em) {   // 340px
+    #who { font-size: 4.0em; }
+    #why { font-size: 1.7em; }
+}
+@media only screen and (min-width: 42.5em) {    // 680px
+
+    #aside {
+        width: 280px;
+        display: table-cell;
+        vertical-align: top;
+        padding-top: 0;
+    }
+
+    #aside.right-sidebar {
+        padding-left: 20px;
+    }
+    
+    #aside.left-sidebar {
+        padding-right: 20px;
+    }
+    
+    .row-with-sidebar {
+        display: table;
+        table-layout: fixed;
+    }
+      
+    .row-with-sidebar .cell {
+        display: table-cell;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 56.25em) {   //900px
+  nav.top-bar {
+    text-align:center;
+  }
+  section.top-bar-section {
+    display: inline-block;
+  }
+  nav.left-off-canvas-menu,
+  nav.tab-bar {
+      display: none;
+  } 
+  #topmenu {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 64.0625em) {     // 1024px
+    #wrap { 
+        width: $main-content-max-width; 
+    }  
+    #name.medium-6 {
+        padding-right: 0;
+    }
+    #email.medium-6 {
+        padding-left: 0;
+    }
+}
+

@@ -35,6 +35,6 @@
             /** This filter is documented in wp-includes/comment-template.php */
             do_action( 'comment_form', $post->ID );
     ?>
-    <p class="clearfix text-center"><input name="submit" type="submit" id="submit" class="button round small" tabindex="5" value="<?php esc_attr_e('Submit'); ?>" />
+    <p class="clearfix text-center"><input name="submit" type="submit" id="submit" class="button round tiny" tabindex="5" value="<?php esc_attr_e('Submit'); ?>" />
     <?php comment_id_fields(); ?></p>
 </form>

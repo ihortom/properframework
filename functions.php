@@ -51,7 +51,8 @@ require_once(get_template_directory().'/functions/search-form.php');
 
 /* SHORTCODES */
 
-//create shortcode to make a separator of the new article within the page
+//Create shortcode to add Guest Book on the page
+//Don't confuse with comments, which are added automatically once enabled for the post
 add_shortcode('gbook', 'pweb_gbook');
 //usage [gbook]
 function pweb_gbook() {	
@@ -60,24 +61,26 @@ function pweb_gbook() {
     $gbook = ob_get_clean(); //Get the buffer and erase it
     return $gbook;
 }
- /* 
-//create shortcode to make a separator of the new article within the page
-add_shortcode('royalfit', 'properweb');
-//usage [royalfit]
-function pwrf_royal_fit() {
-	return '«<strong><em><span style="color: #ed008c;">Royal Fit</span></em></strong>»';
-}
 
+//create shortcode to mention the company name ostentatiously in articles/posts
+add_shortcode('company', 'pweb_company');
+
+//usage [company]
+function pweb_company() {
+    $company = get_bloginfo();
+    return "«<strong><em><span class=\"company\">{$company}</span></em></strong>»";
+}
+  
 //create shortcode to make a separator of the new article within the page
 add_shortcode('article', 'pweb_article');
 
 //usage [article title=""]
 function pweb_article( $atts ) {
-	return '<h2 class="title">' . $atts[title] . '</h2>';
+    return '<h2 class="title">' . $atts[title] . '</h2>';
 }
-*/
 
-//create shortcode for promotions to use image background
+//Create shortcode for promotions to use the featured image as a background image
+//and to highlight the promo's startand end date
 add_shortcode('promo', 'pweb_promo');
 
 //usage [promo start="mm/dd/yy" end="mm/dd/yy" height="px" bgsize="%" line=""]
@@ -115,37 +118,38 @@ function pweb_promo( $atts, $content = null  ) {
     else $period = '';
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
 }
+//
+//// get taxonomies terms links
+//function custom_taxonomies_terms_links(){
+//  // get post by post id
+//  $post = get_post( $post->ID );
+//
+//  // get post type by post
+//  $post_type = $post->post_type;
+//
+//  // get post type taxonomies
+//  $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+//
+//  $out = array();
+//  foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+//
+//    // get the terms related to post
+//    $terms = get_the_terms( $post->ID, $taxonomy_slug );
+//
+//    if ( !empty( $terms ) ) {
+//      $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+//      foreach ( $terms as $term ) {
+//        $out[] =
+//          '  <li><a href="'
+//        .    get_term_link( $term->slug, $taxonomy_slug ) .'">'
+//        .    $term->name
+//        . "</a></li>\n";
+//      }
+//      $out[] = "</ul>\n";
+//    }
+//  }
+//
+//  return implode('', $out );
+//}
 
-// get taxonomies terms links
-function custom_taxonomies_terms_links(){
-  // get post by post id
-  $post = get_post( $post->ID );
-
-  // get post type by post
-  $post_type = $post->post_type;
-
-  // get post type taxonomies
-  $taxonomies = get_object_taxonomies( $post_type, 'objects' );
-
-  $out = array();
-  foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
-
-    // get the terms related to post
-    $terms = get_the_terms( $post->ID, $taxonomy_slug );
-
-    if ( !empty( $terms ) ) {
-      $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
-      foreach ( $terms as $term ) {
-        $out[] =
-          '  <li><a href="'
-        .    get_term_link( $term->slug, $taxonomy_slug ) .'">'
-        .    $term->name
-        . "</a></li>\n";
-      }
-      $out[] = "</ul>\n";
-    }
-  }
-
-  return implode('', $out );
-}
 ?>

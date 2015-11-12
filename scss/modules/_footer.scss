@@ -1,0 +1,44 @@
+/***** Footer *****/
+#footer {
+    width: 100%;
+    background-color: transparent;
+    border-top: 1px solid $footer-default-text-color;
+    text-align: center;
+    font: $footer-default-font;
+    padding: 10px 0;
+    color: $footer-default-text-color;
+    margin-top: 20px;
+    a {
+        text-decoration: none;
+        color: #333;
+    }
+    #footer-sidebar {
+        color: #333;
+        padding-left: 50px;
+        margin:	0;
+        .widget-title {
+            font-weight: 700;
+            line-height: 0.9em;
+            font-size: 0.9em;
+            padding: 0 0 7px;
+        }
+        li.widget {
+            float: left;
+            display: block;
+            width: 33%;
+            text-align: left;
+            font-weight: 400;
+        }
+    }
+}
+
+#copyright {
+    clear: both;
+    margin: 0;
+    font-weight: 400;
+    a {
+        text-decoration: none;
+        color: $footer-default-text-color;
+    }
+}
+

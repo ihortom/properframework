@@ -1,0 +1,18 @@
+$main-content-max-width: 1000px;
+
+//Fonts
+$main-font-family: Philosopher;
+$substitute-font-family: 'Open Sans', Verdana, Helvetica, Tahoma, Arial, sans-serif;
+$default-font: normal normal 1em $main-font-family, $substitute-font-family;
+$default-font-family: $main-font-family, $substitute-font-family;
+$nav-default-font: normal bold 1em $main-font-family, $substitute-font-family;
+$input-font-family: 'Open Sans', Tahoma, Arial, sans-serif;
+$footer-default-font: normal bold .75em 'Open Sans', Tahoma, Arial, sans-serif;
+
+//Colors
+$theme-container-color: #008CBA;
+$footer-default-text-color: $theme-container-color; //#936C79 - old
+
+//Dimantions
+$cap-height: 230px;
+$header-height: 150px;
