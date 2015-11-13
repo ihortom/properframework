@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProperFramework\n"
-"POT-Creation-Date: 2015-11-12 20:37-0600\n"
+"POT-Creation-Date: 2015-11-12 23:12-0600\n"
 "PO-Revision-Date: 2015-11-12 17:18-0600\n"
 "Last-Translator: \n"
 "Language-Team: ProperWeb <info@properweb.ca>\n"
@@ -324,4 +324,28 @@ msgstr ""
 
 #: single.php:1
 msgid "Comments"
+msgstr ""
+
+#: taxonomy-pweb_post_type-news.php:35
+msgid "No news"
+msgstr ""
+
+#: taxonomy-pweb_post_type-news.php:36
+msgid "We currently have no news to share"
+msgstr ""
+
+#: taxonomy-pweb_post_type-news.php:37
+msgid "A news article will appear soon"
+msgstr ""
+
+#: taxonomy-pweb_post_type-promo.php:23
+msgid "No promotions"
+msgstr ""
+
+#: taxonomy-pweb_post_type-promo.php:24
+msgid "There's no current promotions."
+msgstr ""
+
+#: taxonomy-pweb_post_type-promo.php:25
+msgid "Please, come back soon."
 msgstr ""

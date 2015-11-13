@@ -32,9 +32,9 @@
         </div>
 <?php endwhile; else : ?>
         <div class="article article-with-sidebar box full-width er404">
-            <h2 class="title">No post submitted</h2>
-            <h3>Sorry, this category contains no post</h3>
-            <p>The corresponding content will be added later on.</p>
+            <h2 class="title"><?php _e('No news','properweb'); ?></h2>
+            <h3><?php _e('We currently have no news to share','pweb'); ?></h3>
+            <p><?php _e('A news article will appear soon','properweb'); ?></p>
         </div>
 <?php endif; ?>
     </div>

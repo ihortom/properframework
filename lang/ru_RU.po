@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProperFramework\n"
-"POT-Creation-Date: 2015-11-12 20:37-0600\n"
-"PO-Revision-Date: 2015-11-12 20:39-0600\n"
+"POT-Creation-Date: 2015-11-12 23:12-0600\n"
+"PO-Revision-Date: 2015-11-12 23:17-0600\n"
 "Last-Translator: \n"
 "Language-Team: ProperWeb <info@properweb.ca>\n"
 "Language: ru_RU\n"
@@ -163,8 +163,7 @@ msgstr "Заголовок"
 
 #: functions/meta.php:52
 msgid "Meta tag \"title\". If omitted, page/post title will be used instead."
-msgstr ""
-"Мета тэг <title>. Если опущен, будет использоваться заглавие страницы/поста."
+msgstr "Мета-тэг <title>. По умолчанию изпользуется заголовок статьи/страницы."
 
 #: functions/meta.php:60
 msgid "Description"
@@ -172,7 +171,7 @@ msgstr "Описание"
 
 #: functions/meta.php:61
 msgid "Meta tag \"description\". Recommended up to 155 characters."
-msgstr "Мета тэг <description>. Рекоммендуемая длина до 155 символов."
+msgstr "Мета-тэг <description>. Рекоммендуемая длина до 155 символов."
 
 #: functions/meta.php:69
 msgid "Keywords"
@@ -180,8 +179,7 @@ msgstr "Ключевые слова"
 
 #: functions/meta.php:70
 msgid "Meta tag \"keywords\". Recommended up to 170 characters (5-10 words)."
-msgstr ""
-"Мета тэг <keywords>. Рекоммендуемая длина  до 170 символов (5-10 слов)."
+msgstr "Мета-тэг <keywords>. Рекоммендуемая длина до 170 символов (5-10 слов)."
 
 #: functions/pagination.php:24
 msgid "Previous"
@@ -331,6 +329,30 @@ msgstr "Опубликовано"
 #: single.php:1
 msgid "Comments"
 msgstr "Комментарии"
+
+#: taxonomy-pweb_post_type-news.php:35
+msgid "No news"
+msgstr "Новостей нет"
+
+#: taxonomy-pweb_post_type-news.php:36
+msgid "We currently have no news to share"
+msgstr "В настоящее время у нас нет новостей"
+
+#: taxonomy-pweb_post_type-news.php:37
+msgid "A news article will appear soon"
+msgstr "Новости появятся скоро"
+
+#: taxonomy-pweb_post_type-promo.php:23
+msgid "No promotions"
+msgstr "Акций нет"
+
+#: taxonomy-pweb_post_type-promo.php:24
+msgid "There's no current promotions."
+msgstr "В настоящий момент акции/скидки не проводятся."
+
+#: taxonomy-pweb_post_type-promo.php:25
+msgid "Please, come back soon."
+msgstr "Пожалуста, возвращайтесь на эту страницу позднее."
 
 #~ msgid "Featured imaage size"
 #~ msgstr "Основное изображение"

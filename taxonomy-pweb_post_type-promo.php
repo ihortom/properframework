@@ -20,9 +20,9 @@
         </div>
 <?php endwhile; else : ?>
 	<div class="article article-with-sidebar box full-width er404">
-            <h2 class="title">No promotions</h2>
-            <h3>There's no current promotions.</h3>
-            <p>Please, come back soon.</p>
+            <h2 class="title"><?php _e('No promotions','properweb'); ?></h2>
+            <h3><?php _e("There's no current promotions.",'properweb'); ?></h3>
+            <p><?php _e('Please, come back soon.','properweb'); ?></p>
 	</div>
 <?php endif; ?>
     </div>
