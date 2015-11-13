@@ -5,7 +5,7 @@ function pweb_search_form( $form ) {
 	<div>
             <label class="screen-reader-text" for="s">' . __( 'Search for:', 'properweb' ) . '</label>
             <input type="text" value="' . get_search_query() . '" name="s" id="s" />
-            <input type="submit" class="button tiny round" aria-label="submit form" value="'. esc_attr__( 'Search', 'properweb' ) .'" />
+            <input type="submit" class="button tiny round" aria-label="submit form" value="'. __( 'Search', 'properweb' ) .'" />
 	</div>
 	</form>';
 

@@ -13,7 +13,7 @@
 <div class="row row-with-sidebar">
     <div class="cell">
         <div class="article article-with-sidebar box full-width">
-            <h2 class="title"><?php printf( __( 'Search results for: "%s"', 'properweb' ), get_search_query() ); ?></h2>
+            <h2 class="title"><?php _e( 'Search results for:', 'properweb' ); printf( ' "%s"', get_search_query() ); ?></h2>
             <?php if ( have_posts() ) : ?>			
                 <?php while ( have_posts() ) : the_post(); ?>
                 <h3><?php the_title( sprintf( '<a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a>' ); ?></h3>
@@ -23,8 +23,8 @@
                     // Previous/next page navigation.
                     pweb_posts_pagination( array(
                             'mid_size'      => 2,
-                            'prev_text'     => __( '<i class="fa fa-angle-double-left"></i>' ),
-                            'next_text'     => __( '<i class="fa fa-angle-double-right"></i>' ),
+                            'prev_text'     => '<i class="fa fa-angle-double-left"></i>',
+                            'next_text'     => '<i class="fa fa-angle-double-right"></i>'
                     ) );
                 ?>
             <?php else : ?>

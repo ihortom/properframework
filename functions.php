@@ -118,6 +118,27 @@ function pweb_promo( $atts, $content = null  ) {
     else $period = '';
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
 }
+
+//Load translations
+add_action('after_setup_theme', 'pweb_theme_setup');
+
+function pweb_theme_setup(){
+    load_theme_textdomain('properweb', get_template_directory() . '/lang');
+}
+
+// CHANGE LOCAL LANGUAGE
+// for translations debug purposes (ex. www.example.com/?l=ru_RU)
+// must be called before load_theme_textdomain()
+add_filter( 'locale', 'pweb_theme_localized' );
+
+function pweb_theme_localized( $locale )
+{
+    if ( isset( $_GET['l'] ) ) {
+        return sanitize_key( $_GET['l'] );
+    }
+
+    return $locale;
+}
 //
 //// get taxonomies terms links
 //function custom_taxonomies_terms_links(){

@@ -26,7 +26,7 @@ function pweb_register_meta_boxes( $meta_boxes )
         'id'         => 'meta_data',
 
         // Meta box title - Will appear at the drag and drop handle bar. Required.
-        'title'      => __( 'Meta tags', 'meta-box' ),
+        'title'      => __( 'Meta tags', 'properweb' ),
 
         // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
         'post_types' => array( 'post', 'page' ),
@@ -45,11 +45,11 @@ function pweb_register_meta_boxes( $meta_boxes )
             // TEXT
             array(
                 // Field name - Will be used as label
-                'name'  => __( 'Title', 'meta-box' ),
+                'name'  => __( 'Title', 'properweb' ),
                 // Field ID, i.e. the meta key
                 'id'    => "{$prefix}title",
                 // Field description (optional)
-                'desc'  => __( 'Meta tag "title". If omitted, page/post title will be used instead.', 'meta-box' ),
+                'desc'  => __( 'Meta tag "title". If omitted, page/post title will be used instead.', 'properweb' ),
                 'type'  => 'text',
                 // CLONES: Add to make the field cloneable (i.e. have multiple value)
                 'clone' => false,
@@ -57,8 +57,8 @@ function pweb_register_meta_boxes( $meta_boxes )
             ),
             // TEXTAREA
             array(
-                'name' => __( 'Description', 'meta-box' ),
-                'desc' => __( 'Meta tag "description". Recommended up to 155 characters.', 'meta-box' ),
+                'name' => __( 'Description', 'properweb' ),
+                'desc' => __( 'Meta tag "description". Recommended up to 155 characters.', 'properweb' ),
                 'id'   => "{$prefix}description",
                 'type' => 'textarea',
                 'cols' => 20,
@@ -67,7 +67,7 @@ function pweb_register_meta_boxes( $meta_boxes )
             // TEXTAREA
             array(
                 'name' => __( 'Keywords', 'meta-box' ),
-                'desc' => __( 'Meta tag "keywords". Recommended up to 170 characters (5-10 words).', 'meta-box' ),
+                'desc' => __( 'Meta tag "keywords". Recommended up to 170 characters (5-10 words).', 'properweb' ),
                 'id'   => "{$prefix}keywords",
                 'type' => 'textarea',
                 'cols' => 20,

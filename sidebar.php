@@ -34,7 +34,7 @@
                     $current_pweb_term = $pweb_term[0]->name;
                 $query = new WP_Query( $args );
                 if( $query->have_posts() ) : ?>
-                    <h3 class="widget-title">Recent <?php the_terms($post->ID, 'pweb_post_type'); ?></h3>
+                    <h3 class="widget-title"><?php _e('Recent ','properweb'); the_terms($post->ID, 'pweb_post_type'); ?></h3>
                     <ul>
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
                         <li class="page_item page-item-<?php echo $post->ID; ?>">

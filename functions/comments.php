@@ -10,14 +10,14 @@ function pweb_comments ($comment, $args, $depth) {
                     <?php echo get_avatar( $comment->comment_author_email, 50 ); ?>
                 </div>
                 <div class="comment-author small-9 medium-10 columns">
-                    <span class="author"><?php printf(__('<cite>%s</cite>','wip'), get_comment_author()) ?></span><br>
+                    <span class="author"><?php printf('<cite>%s</cite>', get_comment_author()) ?></span><br>
                     <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
                             <?php 
-                                    printf(__('%1$s %2$s','wip'), get_comment_date(),  get_comment_time()); 
+                                printf('%1$s %2$s', get_comment_date(),  get_comment_time()); 
                             ?>
                             &nbsp;&nbsp;&nbsp;
                             <?php
-                                    edit_comment_link(__('(Edit)','properweb')); 
+                                edit_comment_link(__('(Edit)','properweb')); 
                             ?>
                     </time>
                 </div>

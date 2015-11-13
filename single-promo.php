@@ -25,9 +25,7 @@
 		
 	<?php endwhile; else : ?>
             <div class="article article-with-sidebar box full-width">
-                <h2 class="title">No post</h2>
-                <h3>Sorry, this category contains no post yet.</h3>
-                <p>Content will be added soon.</p>
+                <?php include_once 'parts/no-post.php'; ?>
             </div>
 		
 	<?php endif; ?>

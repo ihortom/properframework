@@ -1,0 +1,336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ProperFramework\n"
+"POT-Creation-Date: 2015-11-12 20:37-0600\n"
+"PO-Revision-Date: 2015-11-12 20:39-0600\n"
+"Last-Translator: \n"
+"Language-Team: ProperWeb <info@properweb.ca>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-SearchPath-0: parts\n"
+"X-Poedit-SearchPath-1: functions\n"
+"X-Poedit-SearchPath-2: 404.php\n"
+"X-Poedit-SearchPath-3: archive.php\n"
+"X-Poedit-SearchPath-4: category.php\n"
+"X-Poedit-SearchPath-5: comments.php\n"
+"X-Poedit-SearchPath-6: footer.php\n"
+"X-Poedit-SearchPath-7: front-page.php\n"
+"X-Poedit-SearchPath-8: functions.php\n"
+"X-Poedit-SearchPath-9: header.php\n"
+"X-Poedit-SearchPath-10: index.php\n"
+"X-Poedit-SearchPath-11: page.php\n"
+"X-Poedit-SearchPath-12: page-full-width.php\n"
+"X-Poedit-SearchPath-13: search.php\n"
+"X-Poedit-SearchPath-14: sidebar.php\n"
+"X-Poedit-SearchPath-15: sidebar-default.php\n"
+"X-Poedit-SearchPath-16: sidebar-search.php\n"
+"X-Poedit-SearchPath-17: single.php\n"
+"X-Poedit-SearchPath-18: single-news.php\n"
+"X-Poedit-SearchPath-19: single-promo.php\n"
+"X-Poedit-SearchPath-20: taxonomy.php\n"
+"X-Poedit-SearchPath-21: taxonomy-pweb_post_type-news.php\n"
+"X-Poedit-SearchPath-22: taxonomy-pweb_post_type-promo.php\n"
+
+#: 404.php:14
+msgid "Document not found"
+msgstr "Документ не найден"
+
+#: 404.php:15
+msgid "Sorry, the page you were looking for was not found."
+msgstr "К сожелению, страница, которую вы искали, не найдена."
+
+#: 404.php:16
+msgid "It might have been removed or relocated. Try to use the search."
+msgstr ""
+"Возможно, она была удалена или перемещена. Воспользуйтесь функцией поика."
+
+#: comments.php:5
+msgid "LEAVE A COMMENT"
+msgstr "Написать комментарий"
+
+#: comments.php:12 functions/gbook.php:12
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+"Вы должны <a href=\"%s\">авторизоваться</a>, чтобы оставить комментарий."
+
+#: comments.php:24
+#, php-format
+msgid "%1$s comments"
+msgstr "%1$s комментария/ев"
+
+#: comments.php:24
+msgid "One comment"
+msgstr "Один комментарий"
+
+#: comments.php:58 functions/gbook.php:61
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+#: footer.php:34
+msgid "All rights reserved"
+msgstr "Все права защищены"
+
+#: footer.php:34
+msgid "Developed by"
+msgstr "Разработка"
+
+#: functions.php:115
+msgid "till "
+msgstr "до "
+
+#: functions/admin.php:10
+msgid "Organization/Business"
+msgstr "Организация/Бизнес"
+
+#: functions/admin.php:17
+msgid "Main activity/service"
+msgstr "Основная деятельность/Услуги"
+
+#: functions/admin.php:28
+msgid "Online presence since (year)"
+msgstr "Кибернетическое присутсвие с (год)"
+
+#: functions/admin.php:48
+msgid "The phrase will appear in the header"
+msgstr "Эта фраза появится во главе страницы"
+
+#: functions/admin.php:54
+msgid "The year will appear in the footer"
+msgstr "Это год отобразится в основании страницы"
+
+#: functions/cleanup.php:27 functions/cleanup.php:34
+msgid "Read More"
+msgstr "Читать далее"
+
+#: functions/comments.php:20
+msgid "(Edit)"
+msgstr "(Редактировать)"
+
+#: functions/comments.php:29
+msgid "Your comment is awaiting approval."
+msgstr "Ваш комментарий поставлен на одобрение."
+
+#: functions/gbook.php:5
+msgid "LEAVE A MESSAGE IN THE GUEST BOOK"
+msgstr "ОСТАВИТЬ ЗАПИСЬ В ГОСТЕВОЕ КНИГЕ"
+
+#: functions/gbook.php:25
+#, php-format
+msgid "%1$s messages in %2$s"
+msgstr "%1$s записей/и в %2$s"
+
+#: functions/gbook.php:25
+#, php-format
+msgid "One message in %2$s"
+msgstr "Одна запись в %2$s"
+
+#: functions/gbook.php:27
+msgid "Guest Book"
+msgstr "Гостевой книге"
+
+#: functions/gbook.php:57
+msgid "There are no messages yet. Be the first to leave a message."
+msgstr "Ни одной записи никем оставлено еще не было. Будьте первыми."
+
+#: functions/gbook.php:67
+msgid "Comments are not enabled."
+msgstr "Комментарии отключены"
+
+#: functions/menu-walkers.php:46
+msgid "Back"
+msgstr "Назад"
+
+#: functions/menu.php:6
+msgid "Above the content"
+msgstr "Над основным контентом"
+
+#: functions/meta.php:29
+msgid "Meta tags"
+msgstr "Мета тэги"
+
+#: functions/meta.php:48
+msgid "Title"
+msgstr "Заголовок"
+
+#: functions/meta.php:52
+msgid "Meta tag \"title\". If omitted, page/post title will be used instead."
+msgstr ""
+"Мета тэг <title>. Если опущен, будет использоваться заглавие страницы/поста."
+
+#: functions/meta.php:60
+msgid "Description"
+msgstr "Описание"
+
+#: functions/meta.php:61
+msgid "Meta tag \"description\". Recommended up to 155 characters."
+msgstr "Мета тэг <description>. Рекоммендуемая длина до 155 символов."
+
+#: functions/meta.php:69
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+#: functions/meta.php:70
+msgid "Meta tag \"keywords\". Recommended up to 170 characters (5-10 words)."
+msgstr ""
+"Мета тэг <keywords>. Рекоммендуемая длина  до 170 символов (5-10 слов)."
+
+#: functions/pagination.php:24
+msgid "Previous"
+msgstr "Предыдущий"
+
+#: functions/pagination.php:25
+msgid "Next"
+msgstr "Следующий"
+
+#: functions/pagination.php:26 functions/pagination.php:71
+msgid "Posts navigation"
+msgstr "Навигация постов"
+
+#: functions/pagination.php:184
+msgid " Previous"
+msgstr "Предыдущий"
+
+#: functions/pagination.php:185
+msgid "Next "
+msgstr "Следующий "
+
+#: functions/search-form.php:6
+msgid "Search for:"
+msgstr "Найти:"
+
+#: functions/search-form.php:8
+msgid "Search"
+msgstr "Поиск"
+
+#: functions/sidebars.php:10
+msgid "Header"
+msgstr "Заголовок"
+
+#: functions/sidebars.php:12
+msgid "Widget area at the top of the home page."
+msgstr "Виджет в заголовке страницы."
+
+#: functions/sidebars.php:23
+msgid "Footer"
+msgstr "Основание"
+
+#: functions/sidebars.php:25
+msgid "Widget area in the footer."
+msgstr "Виджет в основании."
+
+#: functions/sidebars.php:36
+msgid "Page Aside"
+msgstr "Боковая панель страницы"
+
+#: functions/sidebars.php:38
+msgid "Page side widget area."
+msgstr "Боковая панель страницы"
+
+#: functions/sidebars.php:49
+msgid "Post Aside"
+msgstr "Боковая панель поста"
+
+#: functions/sidebars.php:51
+msgid "Post side widget area."
+msgstr "Боковая панель поста"
+
+#: functions/theme-support.php:10
+msgid "Featured image size"
+msgstr "Размер основного изображения"
+
+#: parts/comments-form.php:5
+msgid "Logged in as"
+msgstr "Вошли в систему как"
+
+#: parts/comments-form.php:6
+msgid "Log out"
+msgstr "Выйти"
+
+#: parts/comments-form.php:9
+msgid "Your e-mail will not be shared. All the fields are mandatory"
+msgstr ""
+"Ваш e-mail не будет передан третьим лицам. Все поля обязательны для "
+"заполнения"
+
+#: parts/comments-form.php:14
+msgid "Name:"
+msgstr "Имя:"
+
+#: parts/comments-form.php:19
+msgid "Email:"
+msgstr "Эл. почта:"
+
+#: parts/comments-form.php:27
+msgid "Message:"
+msgstr "Сообщение:"
+
+#: parts/comments-form.php:30
+#, php-format
+msgid "<strong>HTML:</strong> You can use these tags: <code>%s</code>"
+msgstr ""
+"<strong>HTML:</strong> Вы можете использовать следуюющие тэги: <code>%s</"
+"code>"
+
+#: parts/comments-form.php:38
+msgid "Submit"
+msgstr "Отправить"
+
+#: parts/no-post.php:1
+msgid "No posts"
+msgstr "Публикаций нет"
+
+#: parts/no-post.php:2
+msgid "Sorry, this category contains no post yet."
+msgstr "К сожелению, эта категория не содержит ни одного поста."
+
+#: parts/no-post.php:3
+msgid "The content will be added soon."
+msgstr "Контент будет наполнен вскоре."
+
+#: search.php:16
+msgid "Search results for:"
+msgstr "Результаты поиска:"
+
+#: sidebar.php:37
+msgid "Recent "
+msgstr "Последние "
+
+#: sidebar.php:45
+msgid "This is the only post of the category "
+msgstr "Это единственная публикация категории "
+
+#: sidebar.php:67
+msgid "Available "
+msgstr "Доступные "
+
+#: sidebar.php:67
+msgid "Other "
+msgstr "Другии "
+
+#: sidebar.php:68
+msgid "categories"
+msgstr "категории"
+
+#: sidebar.php:82
+msgid "Recent Posts"
+msgstr "Последние публикации"
+
+#: single.php:1
+msgid "Posted by"
+msgstr "Опубликовано"
+
+#: single.php:1
+msgid "Comments"
+msgstr "Комментарии"
+
+#~ msgid "Featured imaage size"
+#~ msgstr "Основное изображение"

@@ -181,8 +181,8 @@ function pweb_paginate_links( $args = '' ) {
             'current' => $current,
             'show_all' => false,
             'prev_next' => true,
-            'prev_text' => __('&laquo; Previous'),
-            'next_text' => __('Next &raquo;'),
+            'prev_text' => '&laquo;'.__(' Previous'),
+            'next_text' => __('Next ').'&raquo;',
             'end_size' => 1,
             'mid_size' => 2,
             'type' => 'array',
@@ -260,7 +260,7 @@ function pweb_paginate_links( $args = '' ) {
                     $page_links[] = "<a class='page-numbers' href='" . esc_url( apply_filters( 'paginate_links', $link ) ) . "'>" . $args['before_page_number'] . number_format_i18n( $n ) . $args['after_page_number'] . "</a>";
                     $dots = true;
             elseif ( $dots && ! $args['show_all'] ) :
-                    $page_links[] = '<span class="page-numbers dots">' . __( '&hellip;' ) . '</span>';
+                    $page_links[] = '<span class="page-numbers dots">' . '&hellip;' . '</span>';
                     $dots = false;
             endif;
         endif;

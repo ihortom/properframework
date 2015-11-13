@@ -31,7 +31,7 @@
                     }
                     else { echo date('Y').' '; }
                     echo bloginfo('name'); 
-                ?> | <?php _e('All rights reserved'); ?> | Developed by <a href="https://www.properweb.ca">ProperWeb</a> | Tomilenko Company</div>
+                ?> | <?php _e('All rights reserved','properweb'); ?> | <?php _e('Developed by','properweb');?> <a href="https://www.properweb.ca">ProperWeb</a> | Tomilenko Company</div>
         </div>
     </div><!-- #wrap -->
     <?php wp_footer(); ?>

@@ -20,9 +20,13 @@
 <!-- COMMENTS -->
     <?php if ( have_comments() ) : ?>
         <div id="comments">	
-                <h3 class="gbook-stats"><?php	printf( _n( 'One message in %2$s', '%1$s messages in %2$s', get_comments_number() ),
-                                                                                number_format_i18n( get_comments_number() ), '&#8220;' . "Guest Book" . '&#8221;' ); ?></h3>
-
+                <h3 class="gbook-stats">
+                    <?php   
+                        printf( _n( 'One message in %2$s', __('%1$s messages in %2$s','properweb'), 
+                            get_comments_number(), 'properweb' ), number_format_i18n( get_comments_number() ), 
+                            '&#8220;' . __('Guest Book') . '&#8221;' ); 
+                    ?>
+                </h3>
 
                 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
                 <div class="gbook-navigation nav-top">
@@ -49,7 +53,8 @@
             <?php if ( comments_open() ) : ?>
                 <br>
                 <div data-alert class="alert-box info radius">
-                    <p class="text-center"><i class="fa fa-comment-o fa-lg fa-fw"></i>There are no messages yet. Be the first to leave a message.</p>
+                    <p class="text-center"><i class="fa fa-comment-o fa-lg fa-fw"></i> 
+                        <?php _e('There are no messages yet. Be the first to leave a message.','properweb'); ?></p>
                 </div>
             <?php else : // comments are closed ?>
                 <!-- If comments are closed. -->
@@ -59,5 +64,5 @@
         <?php endif; ?>
     </div><!-- #gbook -->
 <?php else : ?>
-    <p class="text-center">Comments are not enabled.</p>
+    <p class="text-center"><?php _e('Comments are not enabled.','properweb'); ?></p>
 <?php endif; ?>

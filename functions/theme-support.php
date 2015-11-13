@@ -7,7 +7,7 @@ add_filter( 'image_size_names_choose', 'pweb_custom_sizes' );
 
 function pweb_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'pweb-custom-size' => __( 'Featured imaage size' ),
+        'pweb-custom-size' => __( 'Featured image size' ),
     ) );
 }
 
