@@ -1,8 +1,15 @@
 //Media directives
-@media only screen and (max-width: 31.25em) {   // 340px
-    #who { font-size: 4.0em; }
-    #why { font-size: 1.7em; }
+@media only screen and (min-width: 21.25em) and (max-width: 42.5em) {   // 340px - 680px
+    #footer #footer-sidebar li.widget {
+        width: 49%;
+    }
 }
+
+@media only screen and (max-width: 31.25em) {   // 500px
+    #who { font-size: 3.0em; }
+    #why { font-size: 1.5em; }
+}
+
 @media only screen and (min-width: 42.5em) {    // 680px
 
     #aside {
@@ -23,11 +30,14 @@
     .row-with-sidebar {
         display: table;
         table-layout: fixed;
+        .cell {
+            display: table-cell;
+            width: 100%;
+        }
     }
       
-    .row-with-sidebar .cell {
-        display: table-cell;
-        width: 100%;
+    #footer #footer-sidebar li.widget {
+        width: 24%;
     }
 }
 

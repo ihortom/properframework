@@ -46,19 +46,17 @@
         <div id="header" class="row">
             <div id="logo" class="large-12 columns">
                 <!--<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/logo.png" alt="">-->
-                <h1 id="who"><?php bloginfo('name'); ?></h1>
                 <?php if (get_option('main_service_type')) : ?>
                 <h2 id="what"><?php echo get_option('main_service_type'); ?></h2>
                 <?php endif; ?>
+                <h1 id="who"><?php bloginfo('name'); ?></h1>
                 <h3 id="why"><?php bloginfo('description'); ?></h3>
             </div>
-            <!--
             <?php if (is_active_sidebar( 'header_sidebar' )) : ?> 
-                <div id="slider">
+                <div id="header-sidebar" class="sidebar">
                     <?php dynamic_sidebar( 'Header' ); ?>
                 </div>
             <?php endif; ?>
-            -->
         </div>
         
         <?php 

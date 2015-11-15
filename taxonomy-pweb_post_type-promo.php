@@ -30,7 +30,7 @@
         <div  class="box with-pads">
             <ul id="aside-sidebar" class="sidebar">
 		<?php get_sidebar('default'); ?>  
-                <?php dynamic_sidebar( 'Page Aside' ); ?>
+                <?php dynamic_sidebar( 'Post Aside' ); ?>
             </ul>
         </div>
     </div>

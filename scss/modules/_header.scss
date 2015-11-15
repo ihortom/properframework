@@ -8,7 +8,7 @@
 
 #header {
     width: 100%;
-    height: $header-height;
+    _height: $header-height;
     
     img {
         margin: 0;
@@ -27,24 +27,19 @@
     font-family: 'Eras Bd BT', $substitute-font-family;
     font-size: 5em;
     font-weight: bold;
-    line-height: 1.2;
-    display: block;
+    line-height: 1;
     text-align: center;
     color: #555;
     text-shadow: 3px 3px 5px #777;
 }
 
 #what {
-    position: absolute; 
-    top: 0;
-    right: 0;
     color: #333;
     font: normal normal 1.2em $default-font-family;
-    margin: 10px
+    text-align: right;
 }
 
-#why {
-    display: block; 
+#why { 
     color: #333; 
     text-align:center;
     font: italic normal 1.9em 'Eras Bk BT', $substitute-font-family;
