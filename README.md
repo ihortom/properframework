@@ -2,7 +2,7 @@
 ### A WordPress theme based on "Foundation" front-end framework
 Designed to serve as a framework to more advanced and customised themes.
 
-Depends on [**Foundation**}(http://foundation.zurb.com/) CSS/Javascript framework by Zurb
+Depends on [**Foundation**](http://foundation.zurb.com/) CSS/Javascript framework by Zurb
 
 Uses: 
 1. [**Sass**](http://sass-lang.com/) to generate and compile custom style sheets.
