@@ -24,10 +24,7 @@
 
 #who {
     text-decoration: none;
-    font-family: 'Eras Bd BT', $substitute-font-family;
-    font-size: 5em;
-    font-weight: bold;
-    line-height: 1;
+    font: normal bold 4em 'Eras Bd BT', $substitute-font-family;
     text-align: center;
     color: #555;
     text-shadow: 3px 3px 5px #777;
@@ -42,6 +39,6 @@
 #why { 
     color: #333; 
     text-align:center;
-    font: italic normal 1.9em 'Eras Bk BT', $substitute-font-family;
+    font: italic normal 1.7em/1.8em 'Eras Bk BT', $substitute-font-family;
     text-shadow: 3px 3px 5px #777;
 }
