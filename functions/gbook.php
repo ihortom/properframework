@@ -12,7 +12,10 @@
                     <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url( get_permalink() )); ?></p>
             <?php else : ?>
 
-            <?php include_once dirname(dirname(__FILE__)).'/parts/comments-form.php'; ?>
+            <?php 
+                $req = get_option('require_name_email');
+                include_once dirname(dirname(__FILE__)).'/parts/comments-form.php'; 
+            ?>
 
             <?php endif; // If registration required and not logged in ?>
         </div>
