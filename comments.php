@@ -12,7 +12,10 @@
                     <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.'), wp_login_url( get_permalink() )); ?></p>
             <?php else : ?>
 
-            <?php include_once 'parts/comments-form.php'; ?>
+            <?php 
+                $req = get_option('require_name_email');
+                include_once 'parts/comments-form.php'; 
+            ?>
 
 
             <?php endif; // If registration required and not logged in ?>
@@ -38,27 +41,26 @@
 
                 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
                 <div class="gbook-navigation nav-bottom">
-                        <div class="alignright"><?php previous_comments_link(' » ') ?></div>
-                        <div class="alignright"><?php next_comments_link(' « ') ?></div>
+                        <div class="right"><?php previous_comments_link(' » ') ?></div>
+                        <div class="right"><?php next_comments_link(' « ') ?></div>
                 </div>
                 <div class="clearfix"></div>
                 <?php endif; // check for comment navigation ?>
 
          <?php else : // this is displayed if there are no comments so far ?>
-
-            <?php if ( comments_open() ) : ?>
-
                 <br>
-                <div data-alert class="alert-box info radius">
-                    <p class="text-center"><i class="fa fa-comment-o fa-lg fa-fw"></i>There are no comments yet. Be the first to leave a comment.</p>
+            <div data-alert class="alert-box info radius text-center">
+                <i class="fa fa-comment-o fa-lg fa-fw"></i>
+            <?php 
+                if ( comments_open() ) {
+                    _e('There are no comments yet. Be the first to leave a comment.','properweb');
+                }
+                else {
+                    _e('Comments are closed.','properweb');
+                } 
+            ?>
                 </div>
-
-            <?php else : // comments are closed ?>
-                <!-- If comments are closed. -->
-                <p class="nocomments"><?php _e('Comments are closed.'); ?></p>
             <?php endif; ?>
-        </div>
-        <?php endif; ?>
     </div><!-- #gbook -->
 <?php endif; // if you delete this the sky will fall on your head ?>
 </div>

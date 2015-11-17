@@ -6,19 +6,19 @@
 
 #aside-sidebar {
     text-decoration: none;
+    h3 {
+        margin: 0;
+    }
+    li a {
+        text-decoration: none;
+    }
+    ul.children {
+        margin-left: 1.25rem;
+    }
 }
 
 #aside-sidebar > li {
-    margin-bottom: 20px;
-}
-
-#aside-sidebar ul.children {
-    margin-left: 20px;
-}
-
-#aside-sidebar li a {
-/*	color: #ED008C;*/
-	text-decoration: none;
+    margin-bottom: 1.25rem;
 }
 
 #wrap ul.sidebar ul {

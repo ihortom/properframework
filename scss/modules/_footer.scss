@@ -10,15 +10,15 @@
     margin-top: 20px;
     a {
         text-decoration: none;
-        color: #333;
+        color: $secondary-color;
     }
     #footer-sidebar {
-        color: #333;
+        color: $secondary-color;
         margin:	0;
         .widget-title {
             font-weight: 700;
-            line-height: 1.5em;
-            font-size: 1em;;
+            font-family: $footer-default-font-family;
+            font-size: $footer-default-font-size;
         }
         li.widget {
             display: inline-block;
@@ -27,6 +27,11 @@
             padding: 0 .7em .7em .7em;
             text-align: left;
             font-weight: 400;
+            font-family: $footer-default-font-family;
+            font-size: $footer-default-font-size;
+        }
+        ul, ol, dl {
+            font-size: $footer-default-font-size;
         }
     }
 }
@@ -35,6 +40,8 @@
     clear: both;
     margin: 0;
     font-weight: 400;
+    font-family: $footer-default-font-family;
+    font-size: $footer-default-font-size;
     a {
         text-decoration: none;
         color: $footer-default-text-color;

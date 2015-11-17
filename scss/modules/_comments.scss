@@ -43,11 +43,6 @@ label {
     text-align: center;
 }
 
-.line {
-    border-bottom: 1px dotted $theme-container-color;
-    margin-top: -7px;
-    margin-bottom: 10px;
-}
 
 .post-date:before, .promo-date:before {
     content: "\f073";
@@ -61,7 +56,7 @@ label {
     font-family: FontAwesome;
     font-weight: normal;
     font-size: 150%;
-    color: #333;
+    color: $secondary-color;
 }
 
 .gbook-navigation {
@@ -121,6 +116,9 @@ label {
 .comment-avatar {
     padding: 0 10px;
     border-right: 1px solid #FCEDED;
+    img.avatar {
+        margin-bottom: .8em;
+    }
 }
 
 .comment-text {
@@ -129,20 +127,22 @@ label {
 
 .comment-text p:before {
     font-family: FontAwesome;
+    font-size: .9em;
     padding-right: 5px;
     content: "\f10d";
-    color: #333;
+    color: $secondary-color;
 }
 
 .comment-text p:after {
     font-family: FontAwesome;
+    font-size: .9em;
     padding-left: 5px;
     content: "\f10e";
-    color: #333;
+    color: $secondary-color;
 }
 
 .comment-date {
-    color: #333;
+    color: $secondary-color;
 }
 
 header.comment-author {

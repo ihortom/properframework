@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProperFramework\n"
-"POT-Creation-Date: 2015-11-12 23:12-0600\n"
-"PO-Revision-Date: 2015-11-12 23:17-0600\n"
+"POT-Creation-Date: 2015-11-17 11:55-0600\n"
+"PO-Revision-Date: 2015-11-17 11:55-0600\n"
 "Last-Translator: \n"
 "Language-Team: ProperWeb <info@properweb.ca>\n"
 "Language: ru_RU\n"
@@ -62,16 +62,20 @@ msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 "Вы должны <a href=\"%s\">авторизоваться</a>, чтобы оставить комментарий."
 
-#: comments.php:24
+#: comments.php:27
 #, php-format
 msgid "%1$s comments"
 msgstr "%1$s комментария/ев"
 
-#: comments.php:24
+#: comments.php:27
 msgid "One comment"
 msgstr "Один комментарий"
 
-#: comments.php:58 functions/gbook.php:61
+#: comments.php:56
+msgid "There are no comments yet. Be the first to leave a comment."
+msgstr "Ни одного комментария никем оставлено еще не было. Будьте первыми."
+
+#: comments.php:59 functions/gbook.php:63
 msgid "Comments are closed."
 msgstr "Комментарии закрыты."
 
@@ -123,25 +127,25 @@ msgstr "Ваш комментарий поставлен на одобрение
 msgid "LEAVE A MESSAGE IN THE GUEST BOOK"
 msgstr "ОСТАВИТЬ ЗАПИСЬ В ГОСТЕВОЕ КНИГЕ"
 
-#: functions/gbook.php:25
+#: functions/gbook.php:28
 #, php-format
 msgid "%1$s messages in %2$s"
 msgstr "%1$s записей/и в %2$s"
 
-#: functions/gbook.php:25
+#: functions/gbook.php:28
 #, php-format
 msgid "One message in %2$s"
 msgstr "Одна запись в %2$s"
 
-#: functions/gbook.php:27
+#: functions/gbook.php:30
 msgid "Guest Book"
 msgstr "Гостевой книге"
 
-#: functions/gbook.php:57
+#: functions/gbook.php:60
 msgid "There are no messages yet. Be the first to leave a message."
 msgstr "Ни одной записи никем оставлено еще не было. Будьте первыми."
 
-#: functions/gbook.php:67
+#: functions/gbook.php:73
 msgid "Comments are not enabled."
 msgstr "Комментарии отключены"
 
@@ -254,10 +258,10 @@ msgid "Log out"
 msgstr "Выйти"
 
 #: parts/comments-form.php:9
-msgid "Your e-mail will not be shared. All the fields are mandatory"
+msgid "Your e-mail will not be shared. All the fields are mandatory."
 msgstr ""
 "Ваш e-mail не будет передан третьим лицам. Все поля обязательны для "
-"заполнения"
+"заполнения."
 
 #: parts/comments-form.php:14
 msgid "Name:"
@@ -271,14 +275,16 @@ msgstr "Эл. почта:"
 msgid "Message:"
 msgstr "Сообщение:"
 
-#: parts/comments-form.php:30
+#: parts/comments-form.php:32
 #, php-format
-msgid "<strong>HTML:</strong> You can use these tags: <code>%s</code>"
+msgid ""
+"<p class=\"lead\"><small><strong>HTML:</strong> You can use these tags:</"
+"small></p><p><small><code>%s</code></small></p>"
 msgstr ""
-"<strong>HTML:</strong> Вы можете использовать следуюющие тэги: <code>%s</"
-"code>"
+"<p class=\"lead\"><small><strong>HTML:</strong> Вы можете использовать эти "
+"теги:</small></p><p><small><code>%s</code></small></p>"
 
-#: parts/comments-form.php:38
+#: parts/comments-form.php:43
 msgid "Submit"
 msgstr "Отправить"
 
@@ -316,7 +322,7 @@ msgstr "Другии "
 
 #: sidebar.php:68
 msgid "categories"
-msgstr "категории"
+msgstr "рубрики"
 
 #: sidebar.php:82
 msgid "Recent Posts"
@@ -330,15 +336,15 @@ msgstr "Опубликовано"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: taxonomy-pweb_post_type-news.php:35
+#: taxonomy-pweb_post_type-news.php:37
 msgid "No news"
 msgstr "Новостей нет"
 
-#: taxonomy-pweb_post_type-news.php:36
+#: taxonomy-pweb_post_type-news.php:38
 msgid "We currently have no news to share"
 msgstr "В настоящее время у нас нет новостей"
 
-#: taxonomy-pweb_post_type-news.php:37
+#: taxonomy-pweb_post_type-news.php:39
 msgid "A news article will appear soon"
 msgstr "Новости появятся скоро"
 
@@ -353,6 +359,16 @@ msgstr "В настоящий момент акции/скидки не пров
 #: taxonomy-pweb_post_type-promo.php:25
 msgid "Please, come back soon."
 msgstr "Пожалуста, возвращайтесь на эту страницу позднее."
+
+#~ msgid "Your e-mail will not be shared. All the fields are mandatory"
+#~ msgstr ""
+#~ "Ваш e-mail не будет передан третьим лицам. Все поля обязательны для "
+#~ "заполнения"
+
+#~ msgid "<strong>HTML:</strong> You can use these tags: <code>%s</code>"
+#~ msgstr ""
+#~ "<strong>HTML:</strong> Вы можете использовать следуюющие тэги: <code>%s</"
+#~ "code>"
 
 #~ msgid "Featured imaage size"
 #~ msgstr "Основное изображение"

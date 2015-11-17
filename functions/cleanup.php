@@ -24,12 +24,12 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 add_filter('excerpt_more', 'pweb_excerpt_more');
 
 function pweb_excerpt_more( $more ) {
-    return '... <p class="with-pads text-center"><a class="read-more button tiny round" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'properweb') . '</a></p>';
+    return '... <p class="text-center"><a class="read-more button tiny round" href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'properweb') . '</a></p>';
 }
 
 //Custom read-more link in the_content
 add_filter( 'the_content_more_link', 'pweb_read_more_link' );
 
 function pweb_read_more_link() {
-    return '... <p class="with-pads text-center"><a class="read-more button tiny round" href="' . get_permalink() . '">' . __('Read More', 'properweb') . '</a></p>';
+    return '... <p class="text-center"><a class="read-more button tiny round" href="' . get_permalink() . '">' . __('Read More', 'properweb') . '</a></p>';
 }
