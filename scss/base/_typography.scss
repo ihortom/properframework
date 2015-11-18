@@ -19,25 +19,13 @@ ul, ol, dl, p {
 
 small {
     font-size: 80%; //same as normalize
-code {
-        font-size: inherit;
-}
+    code {
+            font-size: inherit;
+    }
 }
 
 label {
     font-size: inherit;
-}
-.with-pads {
-    padding: 20px;
-}
-
-.no-pads {
-    margin: -20px -21px -21px;  //cater for .box border
-}
-
-.full-width {
-    width: 100%;
-    padding: 0;
 }
 
 td, th {
@@ -48,20 +36,6 @@ td, th {
 
 th {
     font-weight: 700;
-}
-
-.no-frame td, .no-frame th {
-    border-collapse: collapse;
-    border: none;
-    padding: 2px;
-}
-
-.alignright {
-    float: right;
-}
-	
-.alignleft, {
-    float: left;
 }
 
 table td {

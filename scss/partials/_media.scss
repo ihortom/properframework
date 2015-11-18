@@ -1,4 +1,13 @@
 //Media directives
+@media only screen and (max-width: 40em) {
+    #name {
+        padding-right: 0;
+    }
+    #email {
+        padding-left: 0;
+    }
+}
+
 @media only screen and (min-width: 21.25em) and (max-width: 42.5em) {   // 340px - 680px
     #footer #footer-sidebar li.widget {
         width: 49%;

@@ -6,5 +6,5 @@ input[type=submit],
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $substitute-font-family;
 }

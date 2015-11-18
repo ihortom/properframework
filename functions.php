@@ -113,7 +113,10 @@ function pweb_promo( $atts, $content = null  ) {
         }
         elseif ( $start ) $range = date_format($start, get_option( 'date_format' ));
         else $range = __('till ') . date_format($end, get_option( 'date_format' ));
-        $period = '<div class="promo-date">'. $range .'</div><p class="line"></p>';
+        $period = 
+            '<div class="row meta-data promo-date">'
+            . '<p class="small-12 columns">' . $range . '</p>'
+            . '<p class="line small-12 columns"></p></div>';
     }
     else $period = '';
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
