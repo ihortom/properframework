@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProperFramework\n"
-"POT-Creation-Date: 2015-11-17 11:55-0600\n"
-"PO-Revision-Date: 2015-11-17 11:55-0600\n"
+"POT-Creation-Date: 2015-11-21 02:15-0600\n"
+"PO-Revision-Date: 2015-11-21 02:19-0600\n"
 "Last-Translator: \n"
 "Language-Team: ProperWeb <info@properweb.ca>\n"
 "Language: ru_RU\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 "X-Poedit-SearchPath-0: parts\n"
 "X-Poedit-SearchPath-1: functions\n"
 "X-Poedit-SearchPath-2: 404.php\n"
@@ -64,12 +64,11 @@ msgstr ""
 
 #: comments.php:27
 #, php-format
-msgid "%1$s comments"
-msgstr "%1$s комментария/ев"
-
-#: comments.php:27
-msgid "One comment"
-msgstr "Один комментарий"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] "%1$s комментарий"
+msgstr[1] "%1$s комментария"
+msgstr[2] "%1$s комментариев"
 
 #: comments.php:56
 msgid "There are no comments yet. Be the first to leave a comment."
@@ -90,6 +89,10 @@ msgstr "Разработка"
 #: functions.php:115
 msgid "till "
 msgstr "до "
+
+#: functions.php:138
+msgid "Promotion:"
+msgstr "Акция:"
 
 #: functions/admin.php:10
 msgid "Organization/Business"
@@ -129,13 +132,11 @@ msgstr "ОСТАВИТЬ ЗАПИСЬ В ГОСТЕВОЕ КНИГЕ"
 
 #: functions/gbook.php:28
 #, php-format
-msgid "%1$s messages in %2$s"
-msgstr "%1$s записей/и в %2$s"
-
-#: functions/gbook.php:28
-#, php-format
-msgid "One message in %2$s"
-msgstr "Одна запись в %2$s"
+msgid "%1$s message in %2$s"
+msgid_plural "%1$s messages in %2$s"
+msgstr[0] "%1$s запись в %2$s"
+msgstr[1] "%1$s записи в %2$s"
+msgstr[2] "%1$s записей в %2$s"
 
 #: functions/gbook.php:30
 msgid "Guest Book"
@@ -184,6 +185,21 @@ msgstr "Ключевые слова"
 #: functions/meta.php:70
 msgid "Meta tag \"keywords\". Recommended up to 170 characters (5-10 words)."
 msgstr "Мета-тэг <keywords>. Рекоммендуемая длина до 170 символов (5-10 слов)."
+
+#: functions/meta.php:84
+msgid "Promo"
+msgstr "Акция"
+
+#: functions/meta.php:102
+msgid "Promo flash"
+msgstr "Всплывающая акция"
+
+#: functions/meta.php:103
+msgid ""
+"Flash promo you would like to appear on the page (HTML code, shortcode)."
+msgstr ""
+"Введите текст, который бы вы хотели, чтобы всплыл на это странице (HTML код, "
+"шорт-код)."
 
 #: functions/pagination.php:24
 msgid "Previous"
@@ -359,6 +375,24 @@ msgstr "В настоящий момент акции/скидки не пров
 #: taxonomy-pweb_post_type-promo.php:25
 msgid "Please, come back soon."
 msgstr "Пожалуста, возвращайтесь на эту страницу позднее."
+
+#~ msgid "One comment"
+#~ msgid_plural "%1$s comments"
+#~ msgstr[0] "Один комментарий"
+#~ msgstr[1] "%1$s комментария"
+#~ msgstr[2] "%1$s комментариев"
+
+#~ msgid "One message in %2$s"
+#~ msgid_plural "%1$s messages in %2$s"
+#~ msgstr[0] "Одна запись в %2$s"
+#~ msgstr[1] "%1$s записи в %2$s"
+#~ msgstr[2] "%1$s записей в %2$s"
+
+#~ msgid "%1$s comments"
+#~ msgstr "%1$s комментария/ев"
+
+#~ msgid "%1$s messages in %2$s"
+#~ msgstr "%1$s записей/и в %2$s"
 
 #~ msgid "Your e-mail will not be shared. All the fields are mandatory"
 #~ msgstr ""

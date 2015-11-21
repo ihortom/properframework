@@ -25,7 +25,7 @@
         <div id="comments">	
                 <h3 class="gbook-stats">
                     <?php   
-                        printf( _n( 'One message in %2$s', __('%1$s messages in %2$s','properweb'), 
+                        printf( _n( '%1$s message in %2$s', '%1$s messages in %2$s', 
                             get_comments_number(), 'properweb' ), number_format_i18n( get_comments_number() ), 
                             '&#8220;' . __('Guest Book') . '&#8221;' ); 
                     ?>

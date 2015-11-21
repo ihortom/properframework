@@ -114,12 +114,33 @@ function pweb_promo( $atts, $content = null  ) {
         elseif ( $start ) $range = date_format($start, get_option( 'date_format' ));
         else $range = __('till ') . date_format($end, get_option( 'date_format' ));
         $period = 
-            '<div class="row meta-data promo-date">'
-            . '<p class="small-12 columns">' . $range . '</p>'
+            '<div class="row meta-data">'
+            . '<p class="small-12 columns promo-date">' . $range . '</p>'
             . '<p class="line small-12 columns"></p></div>';
     }
     else $period = '';
     return ($period . '<div class="promo" style="height:'.$atts[height].'px;background-size:'.$atts[bgsize].'%; background-image: url('.$featured_image_url.'); line-height:'.$atts[line].'">'. $content . '</div>');
+}
+
+//create shortcode to make a separator of the new article within the page
+add_shortcode('promo_flash', 'pweb_promo_flash');
+
+//usage [promo_flash id="#"] where id is the relevant promo post ID
+function pweb_promo_flash( $atts ) {
+    
+    $atts = shortcode_atts(
+        array(
+                'id' => '0',
+        ), $atts, 'promo_flash' );
+    
+    $promo_post = get_posts( array( 'include' => array($atts['id'])) );
+    
+    return '<p class="flashref">'.__('Promotion:','properweb').' <a href="#" data-reveal-id="flash">'.$promo_post[0]->post_title.'</a></p>'. 
+    '<div id="flash" class="reveal-modal box article full-width" data-reveal aria-labelledby="flashTitle" aria-hidden="true" role="dialog">
+        <h2 id="flashTitle" class="title">'.strip_tags($promo_post[0]->post_title).'</h2>' .
+        wpautop( do_shortcode($promo_post[0]->post_content) ) .
+        '<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>';
 }
 
 //Load translations

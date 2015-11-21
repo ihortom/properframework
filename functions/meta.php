@@ -20,7 +20,7 @@ function pweb_register_meta_boxes( $meta_boxes )
     // Better has an underscore as last sign
     $prefix = 'pweb_';
 
-    // 1st meta box
+    // Meta box for HTML meta tags
     $meta_boxes[] = array(
         // Meta box id, UNIQUE per meta box. Optional since 4.1.5
         'id'         => 'meta_data',
@@ -53,7 +53,7 @@ function pweb_register_meta_boxes( $meta_boxes )
                 'type'  => 'text',
                 // CLONES: Add to make the field cloneable (i.e. have multiple value)
                 'clone' => false,
-                'size' => 60,
+                'size' => 50,
             ),
             // TEXTAREA
             array(
@@ -72,8 +72,41 @@ function pweb_register_meta_boxes( $meta_boxes )
                 'type' => 'textarea',
                 'cols' => 20,
                 'rows' => 3,
-            ),
-        ),
+            )
+        )
+    );
+    // Meta box for promo flash
+    $meta_boxes[] = array(
+        // Meta box id, UNIQUE per meta box. Optional since 4.1.5
+        'id'         => 'flash',
+
+        // Meta box title - Will appear at the drag and drop handle bar. Required.
+        'title'      => __( 'Promo', 'properweb' ),
+
+        // Post types, accept custom post types as well - DEFAULT is 'post'. Can be array (multiple post types) or string (1 post type). Optional.
+        'post_types' => array( 'page' ),
+
+        // Where the meta box appear: normal (default), advanced, side. Optional.
+        'context'    => 'normal',
+
+        // Order of meta box: high (default), low. Optional.
+        'priority'   => 'high',
+
+        // Auto save: true, false (default). Optional.
+        'autosave'   => false,
+
+        // List of meta fields
+        'fields'     => array(
+            // TEXTAREA
+            array(
+                'name' => __( 'Promo flash', 'properweb' ),
+                'desc' => __( 'Flash promo you would like to appear on the page (HTML code, shortcode).', 'properweb' ),
+                'id'   => "{$prefix}flash",
+                'type' => 'textarea',
+                'cols' => 20,
+                'rows' => 5,
+            )
+        )
     );
     return $meta_boxes;
 }

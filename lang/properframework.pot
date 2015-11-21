@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ProperFramework\n"
-"POT-Creation-Date: 2015-11-12 23:12-0600\n"
+"POT-Creation-Date: 2015-11-21 02:15-0600\n"
 "PO-Revision-Date: 2015-11-12 17:18-0600\n"
 "Last-Translator: \n"
 "Language-Team: ProperWeb <info@properweb.ca>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2\n"
 "X-Poedit-SearchPath-0: parts\n"
 "X-Poedit-SearchPath-1: functions\n"
 "X-Poedit-SearchPath-2: 404.php\n"
@@ -60,16 +60,19 @@ msgstr ""
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
-#: comments.php:24
+#: comments.php:27
 #, php-format
-msgid "%1$s comments"
+msgid "%1$s comment"
+msgid_plural "%1$s comments"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: comments.php:56
+msgid "There are no comments yet. Be the first to leave a comment."
 msgstr ""
 
-#: comments.php:24
-msgid "One comment"
-msgstr ""
-
-#: comments.php:58 functions/gbook.php:61
+#: comments.php:59 functions/gbook.php:63
 msgid "Comments are closed."
 msgstr ""
 
@@ -83,6 +86,10 @@ msgstr ""
 
 #: functions.php:115
 msgid "till "
+msgstr ""
+
+#: functions.php:138
+msgid "Promotion:"
 msgstr ""
 
 #: functions/admin.php:10
@@ -121,25 +128,23 @@ msgstr ""
 msgid "LEAVE A MESSAGE IN THE GUEST BOOK"
 msgstr ""
 
-#: functions/gbook.php:25
+#: functions/gbook.php:28
 #, php-format
-msgid "%1$s messages in %2$s"
-msgstr ""
+msgid "%1$s message in %2$s"
+msgid_plural "%1$s messages in %2$s"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
 
-#: functions/gbook.php:25
-#, php-format
-msgid "One message in %2$s"
-msgstr ""
-
-#: functions/gbook.php:27
+#: functions/gbook.php:30
 msgid "Guest Book"
 msgstr ""
 
-#: functions/gbook.php:57
+#: functions/gbook.php:60
 msgid "There are no messages yet. Be the first to leave a message."
 msgstr ""
 
-#: functions/gbook.php:67
+#: functions/gbook.php:73
 msgid "Comments are not enabled."
 msgstr ""
 
@@ -179,6 +184,19 @@ msgstr ""
 #: functions/meta.php:70
 msgid ""
 "Meta tag \"keywords\". Recommended up to 170 characters (5-10 words)."
+msgstr ""
+
+#: functions/meta.php:84
+msgid "Promo"
+msgstr ""
+
+#: functions/meta.php:102
+msgid "Promo flash"
+msgstr ""
+
+#: functions/meta.php:103
+msgid ""
+"Flash promo you would like to appear on the page (HTML code, shortcode)."
 msgstr ""
 
 #: functions/pagination.php:24
@@ -254,7 +272,7 @@ msgid "Log out"
 msgstr ""
 
 #: parts/comments-form.php:9
-msgid "Your e-mail will not be shared. All the fields are mandatory"
+msgid "Your e-mail will not be shared. All the fields are mandatory."
 msgstr ""
 
 #: parts/comments-form.php:14
@@ -269,12 +287,14 @@ msgstr ""
 msgid "Message:"
 msgstr ""
 
-#: parts/comments-form.php:30
+#: parts/comments-form.php:32
 #, php-format
-msgid "<strong>HTML:</strong> You can use these tags: <code>%s</code>"
+msgid ""
+"<p class=\"lead\"><small><strong>HTML:</strong> You can use these tags:</"
+"small></p><p><small><code>%s</code></small></p>"
 msgstr ""
 
-#: parts/comments-form.php:38
+#: parts/comments-form.php:43
 msgid "Submit"
 msgstr ""
 
@@ -326,15 +346,15 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: taxonomy-pweb_post_type-news.php:35
+#: taxonomy-pweb_post_type-news.php:37
 msgid "No news"
 msgstr ""
 
-#: taxonomy-pweb_post_type-news.php:36
+#: taxonomy-pweb_post_type-news.php:38
 msgid "We currently have no news to share"
 msgstr ""
 
-#: taxonomy-pweb_post_type-news.php:37
+#: taxonomy-pweb_post_type-news.php:39
 msgid "A news article will appear soon"
 msgstr ""
 

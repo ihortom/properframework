@@ -24,7 +24,7 @@
 <!-- COMMENTS -->
     <?php if ( have_comments() ) : ?>
         <div id="comments">	
-                <h3 class="gbook-stats"><?php	printf( _n( 'One comment', __('%1$s comments','properweb'), 
+                <h3 class="gbook-stats"><?php	printf( _n( '%1$s comment', '%1$s comments', 
                     get_comments_number(), 'properweb' ), number_format_i18n( get_comments_number() )); ?></h3>
 
                 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>

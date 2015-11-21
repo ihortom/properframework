@@ -1,6 +1,6 @@
 //Gallery
 
-#gallery {
+/*#gallery {
     padding-top: 7px;
     img {
         margin: 0 5px;
@@ -8,6 +8,12 @@
             border-color: $theme-container-color !important;
         }
     }
+}*/
+//overwrite wordpress rules
+.gallery {
+    text-align: center !important;
+    .gallery-item {
+        display: inline-block !important;
+        float: none !important;
+    }
 }
-
-
